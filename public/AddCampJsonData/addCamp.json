@@ -1,0 +1,91 @@
+[
+    {
+      "campName": "Free Health Checkup Camp",
+      "image": "https://i.ibb.co.com/VC74TCJ/free-camp.jpg",
+      "campFees": 0,
+      "dateTime": "2025-01-25T10:00:00",
+      "location": "Dhaka Medical College, Dhaka, Bangladesh",
+      "healthcareProfessional": "Dr. Ahsan Habib",
+      "participantCount": 50,
+      "description": "A free health checkup camp for all age groups. Includes basic health screenings and consultations.",
+      "joinCampButton": "Join Now"
+    },
+    {
+      "campName": "Eye Care and Vision Camp",
+      "image": "https://i.ibb.co.com/XCQYN7G/eye-care-and-vision.jpg",
+      "campFees": 200,
+      "dateTime": "2025-02-05T09:30:00",
+      "location": "Chittagong Eye Hospital, Chittagong, Bangladesh",
+      "healthcareProfessional": "Dr. Rahima Khatun",
+      "participantCount": 30,
+      "description": "Get a free eye checkup and vision screening by expert ophthalmologists. Glasses available at discounted prices.",
+      "joinCampButton": "Join Now"
+    },
+    {
+      "campName": "Diabetes Awareness and Screening Camp",
+      "image": "https://i.ibb.co.com/hfXRgqX/diabetics-camp.jpg",
+      "campFees": 100,
+      "dateTime": "2025-02-15T11:00:00",
+      "location": "Rajshahi Health Center, Rajshahi, Bangladesh",
+      "healthcareProfessional": "Dr. Farid Uddin",
+      "participantCount": 20,
+      "description": "A camp to raise awareness about diabetes. Includes free blood sugar tests and dietary consultations.",
+      "joinCampButton": "Join Now"
+    },
+    {
+      "campName": "Child Vaccination Camp",
+      "image": "https://i.ibb.co.com/10bhtXR/child-vaccination.jpg",
+      "campFees": 0,
+      "dateTime": "2025-03-10T08:00:00",
+      "location": "Sylhet City Clinic, Sylhet, Bangladesh",
+      "healthcareProfessional": "Dr. Momena Akter",
+      "participantCount": 75,
+      "description": "A free vaccination camp for children under 5 years old. Vaccines include polio, measles, and BCG.",
+      "joinCampButton": "Join Now"
+    },
+    {
+      "campName": "Cardiac Health Screening Camp",
+      "image": "https://i.ibb.co.com/5L8V7G9/cardiac-camp.jpg",
+      "campFees": 500,
+      "dateTime": "2025-04-01T09:00:00",
+      "location": "Apollo Hospital, Barisal, Bangladesh",
+      "healthcareProfessional": "Dr. Tanvir Ahmed",
+      "participantCount": 40,
+      "description": "Heart health checkup including ECG, blood pressure monitoring, and cholesterol tests.",
+      "joinCampButton": "Join Now"
+    },
+    {
+        "campName": "Women's Health Awareness Camp",
+        "image": "https://i.ibb.co.com/DCjKdxm/20901.jpg",
+        "campFees": 0,
+        "dateTime": "2025-05-05T10:00:00",
+        "location": "Bangladesh Medical College, Dhaka, Bangladesh",
+        "healthcareProfessional": "Dr. Nusrat Jahan",
+        "participantCount": 60,
+        "description": "A free camp focusing on women's health, including gynecological checkups and counseling.",
+        "joinCampButton": "Join Now"
+      },
+      {
+        "campName": "Orthopedic Checkup Camp",
+        "image": "https://i.ibb.co.com/Xzrf0rh/2148813500.jpg",
+        "campFees": 300,
+        "dateTime": "2025-06-10T09:00:00",
+        "location": "National Orthopedic Hospital, Dhaka, Bangladesh",
+        "healthcareProfessional": "Dr. Kamrul Hasan",
+        "participantCount": 45,
+        "description": "Consultation and free physiotherapy sessions for back pain, arthritis, and joint issues.",
+        "joinCampButton": "Join Now"
+      },
+      {
+        "campName": "Skin Care and Dermatology Camp",
+        "image": "https://i.ibb.co.com/drqmxBC/2149365807.jpg",
+        "campFees": 150,
+        "dateTime": "2025-07-01T11:00:00",
+        "location": "Skin Wellness Clinic, Khulna, Bangladesh",
+        "healthcareProfessional": "Dr. Sabrina Hossain",
+        "participantCount": 25,
+        "description": "A camp offering skin consultations, acne treatment, and general dermatology services.",
+        "joinCampButton": "Join Now"
+      }
+  ]
+  

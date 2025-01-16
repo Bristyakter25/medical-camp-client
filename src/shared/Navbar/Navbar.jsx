@@ -27,11 +27,11 @@ const Navbar = () => {
               {/* User Profile Picture */}
               {user.photoURL && (
                 <div className="dropdown">
-                  <div tabIndex={0} role="button" className="btn m-1">
+                  <div tabIndex={0}  className=" m-1">
                     <img
                       src={user.photoURL}
                       alt="User Profile"
-                      className="w-10 h-10 rounded-full border border-gray-300"
+                      className="w-8 h-8 rounded-full "
                     />
                   </div>
                   <ul
@@ -45,7 +45,7 @@ const Navbar = () => {
                       </button>
                     </li>
                     <li>
-                      <Link to='/dashBoard'><button  className="btn text-center btn-ghost">
+                      <Link to='/dashboard/addCamp'><button  className="btn text-center btn-ghost">
                         Dashboard
                       </button></Link>
                     </li>
