@@ -108,18 +108,7 @@ const AddCamp = () => {
                   required
                 />
               </div>
-              {/* <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Participant count</span>
-                </label>
-                <input
-                  type="number"
-                  placeholder="Participant count"
-                  {...register("count", { required: true })}
-                  className="input input-bordered w-full"
-                  required
-                />
-              </div> */}
+             
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Description</span>

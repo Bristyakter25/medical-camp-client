@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink to="/">
           <li>Home</li>
         </NavLink>
-        <li>Available Camps</li>
+        <NavLink to='availableCamps'><li>Available Camps</li></NavLink>
 
         {user ? (
           <>

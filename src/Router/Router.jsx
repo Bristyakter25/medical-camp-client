@@ -8,6 +8,11 @@ import AddCamp from "../components/dashboard/AddCamp";
 import Home from "../pages/home/Home";
 import AvailableCamps from "../pages/availableCamp/AvailableCamps";
 import CampDetails from "../components/popularCamps/CampDetails";
+import AvailableCampDetails from "../pages/availableCamp/AvailableCampDetails";
+import ManageCamp from "../components/dashboard/ManageCamp/ManageCamp";
+import Users from "../components/dashboard/profile/Users";
+import PrivateRoutes from "./PrivateRoutes";
+
 
 export const router = createBrowserRouter([
     {
@@ -30,11 +35,15 @@ export const router = createBrowserRouter([
         },
         {
           path:'availableCamps',
-          element:<AvailableCamps></AvailableCamps>
+          element:<PrivateRoutes><AvailableCamps></AvailableCamps></PrivateRoutes>
         },
         {
           path:'popularCamps/:id',
           element:<CampDetails></CampDetails>
+        },
+        {
+          path:'addCamp/:id',
+          element:<AvailableCampDetails></AvailableCampDetails>
         },
         {
           path:'/dashboard',
@@ -43,6 +52,14 @@ export const router = createBrowserRouter([
             {
               path:'addCamp',
               element:<AddCamp></AddCamp>
+            },
+            {
+              path:'manageCamps',
+              element:<ManageCamp></ManageCamp>
+            },
+            {
+              path:'users',
+              element:<Users></Users>
             }
             
           ]

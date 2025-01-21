@@ -4,6 +4,7 @@ import loginAnimation from '../../assets/login animation.json'
 import Lottie from "lottie-react";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Social from "../../components/Social/Social";
 const Login = () => {
   const {signIn} = useContext(AuthContext);
  
@@ -65,6 +66,9 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            
+            <div className="divider">OR</div>
+            <Social></Social>
             <p className="text-center py-3 ">Don't have an account?<Link to='/register' className="text-red-500"> Register here!</Link></p>
           </div>
         </div>

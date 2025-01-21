@@ -5,11 +5,11 @@ const PopularCampCard = ({ popularCamp }) => {
     const { _id, name, image, fees, date, location, healthcareName } = popularCamp;
     const [participantCount, setParticipantCount] = useState(0);
 
-    // Fetch latest participant count
+   
     useEffect(() => {
         const fetchCampDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/popularCamps/${_id}`);
+                const response = await fetch(`http://localhost:5000/addCamp/${_id}`);
                 const data = await response.json();
                 setParticipantCount(data.participantCount);
             } catch (error) {
