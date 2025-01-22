@@ -15,9 +15,9 @@ const Users = () => {
 
   const fetchUsers = async () => {
     try {
-      // Use axiosSecure to fetch data
+      
       const response = await axiosSecure.get("/users");
-      setUsers(response.data); // Assuming the server responds with user data
+      setUsers(response.data); // 
       setLoading(false);
     } catch (error) {
       console.error("Error fetching users:", error);

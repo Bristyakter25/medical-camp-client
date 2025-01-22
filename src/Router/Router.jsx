@@ -12,6 +12,7 @@ import AvailableCampDetails from "../pages/availableCamp/AvailableCampDetails";
 import ManageCamp from "../components/dashboard/ManageCamp/ManageCamp";
 import Users from "../components/dashboard/profile/Users";
 import PrivateRoutes from "./PrivateRoutes";
+import UpdateCamp from "../components/dashboard/ManageCamp/UpdateCamp";
 
 
 export const router = createBrowserRouter([
@@ -60,7 +61,13 @@ export const router = createBrowserRouter([
             {
               path:'users',
               element:<Users></Users>
+            },
+            {
+              path: 'updateCamp/:id', 
+              element: <PrivateRoutes><UpdateCamp /></PrivateRoutes>,
+              loader: ({ params }) => fetch(`http://localhost:5000/addCamp/${params.id}`) 
             }
+            
             
           ]
         }

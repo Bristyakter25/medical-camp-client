@@ -19,6 +19,7 @@ const PopularCamps = () => {
                 {
                     popularCamps.map(popularCamp => <PopularCampCard key={popularCamp._id} popularCamp={popularCamp}></PopularCampCard>)
                 }
+           
 
             </div>
         </div>
