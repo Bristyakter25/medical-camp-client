@@ -13,6 +13,12 @@ import ManageCamp from "../components/dashboard/ManageCamp/ManageCamp";
 import Users from "../components/dashboard/profile/Users";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateCamp from "../components/dashboard/ManageCamp/UpdateCamp";
+import RegisteredCamps from "../components/dashboard/registeredCamps/RegisteredCamps";
+import Pay from "../components/dashboard/registeredCamps/Pay";
+import TotalFees from "../components/dashboard/registeredCamps/TotalFees";
+import PaymentHistory from "../components/dashboard/paymentHistory/PaymentHistory";
+import CampChart from "../components/dashboard/chart/CampChart";
+import ParticipantProfile from "../components/dashboard/participantProfile/ParticipantProfile";
 
 
 export const router = createBrowserRouter([
@@ -50,6 +56,34 @@ export const router = createBrowserRouter([
           path:'/dashboard',
           element:<DashBoard></DashBoard>,
           children:[
+            // Participants Route
+            {
+              path: 'registeredCamps',
+              element:<RegisteredCamps></RegisteredCamps>
+            },
+            {
+              path:'pay',
+              element:<Pay></Pay>
+            },
+            {
+              path:'totalFees',
+              element:<TotalFees></TotalFees>
+            },
+            {
+              path:'payments',
+              element:<PaymentHistory></PaymentHistory>
+            },
+            {
+              path:'campChart',
+              element:<CampChart></CampChart>
+
+            },
+            {
+              path:'participantProfile',
+              element:<ParticipantProfile></ParticipantProfile>
+            },
+
+            // Admin / Organizers Route
             {
               path:'addCamp',
               element:<AddCamp></AddCamp>
@@ -62,10 +96,15 @@ export const router = createBrowserRouter([
               path:'users',
               element:<Users></Users>
             },
+            
             {
               path: 'updateCamp/:id', 
               element: <PrivateRoutes><UpdateCamp /></PrivateRoutes>,
               loader: ({ params }) => fetch(`http://localhost:5000/addCamp/${params.id}`) 
+            },
+            {
+              path: 'registeredCamps',
+              element:<RegisteredCamps></RegisteredCamps>
             }
             
             

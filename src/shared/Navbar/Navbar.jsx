@@ -45,7 +45,7 @@ const Navbar = () => {
                       </button>
                     </li>
                     <li>
-                      <Link to='/dashboard/addCamp'><button  className="btn text-center btn-ghost">
+                      <Link to='/dashboard/campChart'><button  className="btn text-center btn-ghost">
                         Dashboard
                       </button></Link>
                     </li>

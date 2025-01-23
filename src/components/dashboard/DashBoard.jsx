@@ -40,16 +40,16 @@ const DashBoard = () => {
         <div className="divider">Default</div>
         <ul className="menu">
           <li>
-            <NavLink to='/dashboard/analytics'><FaUserTie /> Analytics.</NavLink>
+            <NavLink to='/dashboard/campChart'><FaUserTie /> Analytics.</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/profile'><FaWpforms /> Participant Profile</NavLink>
+            <NavLink to='/dashboard/participantProfile'><FaWpforms /> Participant Profile</NavLink>
           </li>
           <li>
             <NavLink to='/dashboard/registeredCamps'><MdOutlineManageAccounts /> Registered Camps</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/payHistory'><GiArchiveRegister /> Payment History</NavLink>
+            <NavLink to='/dashboard/payments'><GiArchiveRegister /> Payment History</NavLink>
           </li>
         </ul>
 
@@ -65,4 +65,3 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
-
