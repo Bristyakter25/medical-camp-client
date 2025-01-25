@@ -1,38 +1,38 @@
 import React, { useContext, useEffect, useState } from 'react';
-import UseAxiosSecure from '../../../hooks/UseAxiosSecure';
+import AdminProfile from './AdminProfile';
+import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../Providers/AuthProvider';
-import { useForm } from 'react-hook-form';
 
-const ParticipantProfile = () => {
-  const [participant, setParticipant] = useState(null);
+const AdminList = () => {
+  const [admin, setAdmin] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [updatedParticipant, setUpdatedParticipant] = useState({});
+  const [updatedAdmin, setUpdatedAdmin] = useState({});
   const { user } = useContext(AuthContext);
   const axiosSecure = UseAxiosSecure();
 
   useEffect(() => {
-    const fetchParticipant = async () => {
+    const fetchUser = async () => {
       try {
-        const response = await axiosSecure.get(`/participants`, { params: { email: user.email } });
-        const participantData = response.data[0];  // Assuming response is an array
+        const response = await axiosSecure.get(`/users`, { params: { email: user.email } });
+        const userData = response.data;
 
-        if (participantData) {
-          setParticipant(participantData);
-          setUpdatedParticipant(participantData);
+        if (userData && userData.role === 'admin') {
+          setAdmin(userData);
+          setUpdatedAdmin(userData);
         } else {
           Swal.fire({
-            title: 'Error!',
-            text: 'Participant not found.',
+            title: 'Access Denied!',
+            text: 'You do not have admin privileges.',
             icon: 'error',
             confirmButtonText: 'OK'
           });
         }
       } catch (error) {
-        console.error('Error fetching participant:', error);
+        console.error('Error fetching user:', error);
         Swal.fire({
           title: 'Error!',
-          text: 'There was an error fetching participant data.',
+          text: 'There was an error fetching user data.',
           icon: 'error',
           confirmButtonText: 'OK'
         });
@@ -40,18 +40,18 @@ const ParticipantProfile = () => {
     };
 
     if (user?.email) {
-      fetchParticipant();
+      fetchUser();
     }
   }, [user?.email, axiosSecure]);
 
-  const handleUpdate = (participantData) => {
-    setUpdatedParticipant(participantData);
+  const handleUpdate = (adminData) => {
+    setUpdatedAdmin(adminData);
     setIsEditing(true);
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUpdatedParticipant(prevState => ({
+    setUpdatedAdmin(prevState => ({
       ...prevState,
       [name]: value
     }));
@@ -60,8 +60,8 @@ const ParticipantProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosSecure.put(`/participants/${updatedParticipant._id}`, updatedParticipant);
-      setParticipant(updatedParticipant);
+      await axiosSecure.put(`/users/${updatedAdmin._id}`, updatedAdmin);
+      setAdmin(updatedAdmin);
       setIsEditing(false);
       Swal.fire({
         title: 'Success!',
@@ -82,25 +82,9 @@ const ParticipantProfile = () => {
 
   return (
     <div className="container mx-auto">
-      <h2 className="text-center text-3xl mt-8 mb-4 font-bold">Participant Profile</h2>
+      <h2 className="text-center text-3xl mt-8 mb-4 font-bold">Admin Profile</h2>
       <div className="flex flex-wrap justify-center">
-        {participant && !isEditing && (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg my-4">
-            <img className="w-full" src={participant.image} alt={participant.name} />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{participant.name}</div>
-              <p className="text-black">Email:  {participant.email}</p>
-              <p className="text-black">Contact No:  {participant.contact}</p>
-           
-              <button 
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" 
-                onClick={() => handleUpdate(participant)}
-              >
-                Update
-              </button>
-            </div>
-          </div>
-        )}
+        {admin && !isEditing && <AdminProfile admin={admin} onUpdate={handleUpdate} />}
         {isEditing && (
           <form onSubmit={handleSubmit} className="w-full max-w-sm">
             <div className="mb-4">
@@ -108,7 +92,7 @@ const ParticipantProfile = () => {
               <input 
                 type="text" 
                 name="name" 
-                value={updatedParticipant.name} 
+                value={updatedAdmin.name} 
                 onChange={handleChange} 
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
@@ -118,28 +102,17 @@ const ParticipantProfile = () => {
               <input 
                 type="email" 
                 name="email" 
-                value={updatedParticipant.email} 
-                onChange={handleChange} 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                readOnly
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">Image URL</label>
-              <input 
-                type="text" 
-                name="image" 
-                value={updatedParticipant.image} 
+                value={updatedAdmin.email} 
                 onChange={handleChange} 
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact">Contact</label>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="photoURL">Photo URL</label>
               <input 
                 type="text" 
-                name="contact" 
-                value={updatedParticipant.contact} 
+                name="photoURL" 
+                value={updatedAdmin.photoURL} 
                 onChange={handleChange} 
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
@@ -164,4 +137,4 @@ const ParticipantProfile = () => {
   );
 };
 
-export default ParticipantProfile;
+export default AdminList;

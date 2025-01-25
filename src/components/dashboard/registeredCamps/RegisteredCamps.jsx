@@ -3,13 +3,17 @@ import useParticipants from "../../../hooks/useParticipants";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
-
 const RegisteredCamps = () => {
   const { participants, loading } = useParticipants();
-  const { user } = useContext(AuthContext) ;
+  const { user } = useContext(AuthContext);
 
   if (loading) {
     return <p>Loading participants...</p>;
+  }
+
+  // Check if the user or participants are not loaded yet
+  if (!user || !participants) {
+    return <p>No registered camps found for you.</p>;
   }
 
   // Filter participants for the logged-in user
@@ -52,6 +56,7 @@ const RegisteredCamps = () => {
               <th className="border border-gray-300 px-4 py-2">Camp Name</th>
               <th className="border border-gray-300 px-4 py-2">Payment</th>
               <th className="border border-gray-300 px-4 py-2">Total Fees</th>
+              <th className="border border-gray-300 px-4 py-2">Feed back</th>
             </tr>
           </thead>
           <tbody>
@@ -66,6 +71,7 @@ const RegisteredCamps = () => {
                   </Link>
                 </td>
                 <td className="border border-gray-300 px-4 py-2">${totalFees}</td>
+                <Link to="/dashboard/feedBack"><td className="border border-gray-300 px-4 py-2"><button className="btn">Feedback</button></td></Link>
               </tr>
             ))}
           </tbody>

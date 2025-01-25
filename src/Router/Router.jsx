@@ -19,6 +19,9 @@ import TotalFees from "../components/dashboard/registeredCamps/TotalFees";
 import PaymentHistory from "../components/dashboard/paymentHistory/PaymentHistory";
 import CampChart from "../components/dashboard/chart/CampChart";
 import ParticipantProfile from "../components/dashboard/participantProfile/ParticipantProfile";
+import ManageRegisteredCamps from "../components/dashboard/manageRegisteredCamps/ManageRegisteredCamps";
+import AdminList from "../components/dashboard/adminProfile/AdminList";
+import Feedback from "../components/dashboard/registeredCamps/Feedback";
 
 
 export const router = createBrowserRouter([
@@ -82,6 +85,10 @@ export const router = createBrowserRouter([
               path:'participantProfile',
               element:<ParticipantProfile></ParticipantProfile>
             },
+            {
+              path:'feedBack',
+              element:<Feedback></Feedback>
+            },
 
             // Admin / Organizers Route
             {
@@ -105,6 +112,14 @@ export const router = createBrowserRouter([
             {
               path: 'registeredCamps',
               element:<RegisteredCamps></RegisteredCamps>
+            },
+            {
+              path:'manageRegisteredCamps',
+              element:<ManageRegisteredCamps></ManageRegisteredCamps>
+            },
+            {
+              path:'adminProfile',
+              element:<AdminList></AdminList>
             }
             
             

@@ -21,7 +21,7 @@ const UpdateCamp = () => {
             });
     
             const result = await response.json();
-            console.log(result); // Log the result to check the response message
+            console.log(result); 
     
             if (result.message === 'Camp updated successfully!') {
                 Swal.fire({
