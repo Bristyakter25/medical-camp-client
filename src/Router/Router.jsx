@@ -62,19 +62,19 @@ export const router = createBrowserRouter([
             // Participants Route
             {
               path: 'registeredCamps',
-              element:<RegisteredCamps></RegisteredCamps>
+              element:<PrivateRoutes><RegisteredCamps></RegisteredCamps></PrivateRoutes>
             },
             {
               path:'pay',
-              element:<Pay></Pay>
+              element:<PrivateRoutes><Pay></Pay></PrivateRoutes>
             },
             {
               path:'totalFees',
-              element:<TotalFees></TotalFees>
+              element:<PrivateRoutes><TotalFees></TotalFees></PrivateRoutes>
             },
             {
               path:'payments',
-              element:<PaymentHistory></PaymentHistory>
+              element:<PrivateRoutes><PaymentHistory></PaymentHistory></PrivateRoutes>
             },
             {
               path:'campChart',
@@ -83,25 +83,25 @@ export const router = createBrowserRouter([
             },
             {
               path:'participantProfile',
-              element:<ParticipantProfile></ParticipantProfile>
+              element:<PrivateRoutes><ParticipantProfile></ParticipantProfile></PrivateRoutes>
             },
             {
               path:'feedBack',
-              element:<Feedback></Feedback>
+              element:<PrivateRoutes><Feedback></Feedback></PrivateRoutes>
             },
 
             // Admin / Organizers Route
             {
               path:'addCamp',
-              element:<AddCamp></AddCamp>
+              element:<PrivateRoutes><AddCamp></AddCamp></PrivateRoutes>
             },
             {
               path:'manageCamps',
-              element:<ManageCamp></ManageCamp>
+              element:<PrivateRoutes></PrivateRoutes>
             },
             {
               path:'users',
-              element:<Users></Users>
+              element:<PrivateRoutes></PrivateRoutes>
             },
             
             {

@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from "recharts";
-import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
-import { AuthContext } from "../../../Providers/AuthProvider";
+import React, { useContext, useEffect, useState } from 'react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts';
+import UseAxiosSecure from '../../../hooks/UseAxiosSecure';
+import { AuthContext } from '../../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 
 const CampChart = () => {

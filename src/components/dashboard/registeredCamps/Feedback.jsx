@@ -26,7 +26,7 @@ const Feedback = () => {
       feedback,
       name: participant.participantName,
       email: participant.participantEmail,
-      image: participant.image
+      image: user.photoURL,
     };
 
     try {
