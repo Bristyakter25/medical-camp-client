@@ -174,8 +174,8 @@ npm run dev
 🔗 **[Live Demo]: (https://medical-camp-website.web.app/)** 
 
 ## 📂 GitHub Repositories  
-- **Client (Frontend)**: [GitHub Link](#)  
-- **Server (Backend)**: [GitHub Link](#)  
+- **Client (Frontend)**: (https://github.com/Bristyakter25/medical-camp-client) 
+- **Server (Backend)**: (https://github.com/Bristyakter25/medical-camp-server)
 
 ---
 
