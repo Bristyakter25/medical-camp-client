@@ -2,25 +2,27 @@
 
 A comprehensive web application designed to manage medical camps efficiently. Users can explore, register, and participate in medical camps, while organizers can create and manage camps seamlessly.
 
-## 📋 Table of Contents
+# 🛠️ Technologies Used  
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Authentication & Authorization](#authentication--authorization)
-- [Project Structure](#project-structure)
-- [Dashboard Features](#dashboard-features)
-  - [Organizer Dashboard](#organizer-dashboard)
-  - [Participant Dashboard](#participant-dashboard)
+## 🌐 **Frontend (Client-Side)**  
+✅ **React.js** – Frontend framework for building UI  
+✅ **React Router** – Client-side routing for navigation  
+✅ **React Hook Form** – Form validation and handling  
+✅ **Tailwind CSS** – Styling framework for a modern UI  
+✅ **Recharts** – Data visualization for participant analytics  
+✅ **Stripe API** – Payment integration  
 
-
-
-- [Payment & Registration](#payment--registration)
-- [Feedback and Ratings](#feedback-and-ratings)
-- [Contributors](#contributors)
-- [License](#license)
-
----
+## 🔗 **Backend (Server-Side)**  
+✅ **Node.js** – Backend runtime for JavaScript  
+✅ **Express.js** – Web framework for handling API requests  
+✅ **MongoDB** – NoSQL database for storing data  
+✅ **Firebase Authentication** – User authentication (email/password & social login)  
+✅ **JWT (JSON Web Tokens)** – Secure user authentication & authorization  
+ 
+## ⚙️ **Other Tools & Libraries**  
+✅ **Dotenv** – Environment variable management  
+✅ **Nodemon** – Auto-restarting server during development  
+✅ **Cors** – Cross-origin resource sharing for API requests  
 
 # 🚀 Key Features  
 
@@ -59,6 +61,71 @@ A comprehensive web application designed to manage medical camps efficiently. Us
 - **Confirmation System:** Organizer manually confirms payments  
 - **Cancellation System:** Participants can cancel before payment; organizers can manage registrations  
 
+# 📦 Dependencies  
+
+Here are the key dependencies used in the **Medical Camps Management System**:
+
+---
+
+## 🌐 **Frontend (Client-Side) Dependencies**  
+
+```json
+"dependencies": {
+  "react": "^18.x.x",
+  "react-dom": "^18.x.x",
+  "react-router-dom": "^6.x.x",
+  "react-hook-form": "^7.x.x",
+  "formik": "^2.x.x",
+  "tailwindcss": "^3.x.x",
+  "axios": "^1.x.x",
+  "recharts": "^2.x.x",
+  "firebase": "^9.x.x",
+  "jwt-decode": "^4.x.x",
+  "react-icons": "^4.x.x",
+  "react-toastify": "^9.x.x",
+  "classnames": "^2.x.x",
+  "react-spinners": "^0.x.x",
+  "framer-motion": "^10.x.x"
+}
+```
+
+---
+
+## 🔗 **Backend (Server-Side) Dependencies**  
+
+```json
+"dependencies": {
+  "express": "^4.x.x",
+  "mongoose": "^7.x.x",
+  "cors": "^2.x.x",
+  "dotenv": "^16.x.x",
+  "jsonwebtoken": "^9.x.x",
+  "bcryptjs": "^2.x.x",
+  "stripe": "^12.x.x",
+  "cookie-parser": "^1.x.x",
+  "multer": "^1.x.x",
+  "firebase-admin": "^11.x.x"
+}
+```
+
+---
+
+## ⚙️ **Development Dependencies**  
+
+```json
+"devDependencies": {
+  "nodemon": "^3.x.x",
+  "eslint": "^8.x.x",
+  "prettier": "^3.x.x"
+}
+```
+
+---
+
+### 🔹 **Additional Tools & Integrations**  
+- **Firebase Authentication** – User authentication (email/password & social login)  
+- **Stripe API** – Payment processing  
+
 ## 🚀 Installation
 
 1️⃣ Clone the repository  
@@ -85,60 +152,6 @@ npm run dev
 
 ---
 
-## 🎮 Usage
-
-- **Navbar:**  
-  - Shows **Join Us** when the user is not logged in.  
-  - Shows **Profile Picture & Dropdown Menu** (User Name, Dashboard, Logout) when logged in.
-
-- **Available Camps Page:**  
-  - Displays all camps with key details  
-  - Provides filtering, sorting, and layout switching  
-
-- **Camp Details Page:**  
-  - Displays full camp details  
-  - Allows users to join a camp  
-
-- **Organizer Dashboard:**  
-  - Manage camps (add, update, delete)  
-  - Manage participant registrations  
-
-- **Participant Dashboard:**  
-  - View registered camps, payments, and analytics  
-  - Leave feedback & ratings  
-
----
-
-## 🔐 Authentication & Authorization  
-
-- Users can sign up or log in via email/password or social login  
-- React Hook Form is used for form validation  
-- Authentication is required to access dashboards  
-
----
-
-## 🏗 Project Structure
-
-```
-/medical-camps
- ├── src/
- │   ├── components/       # Reusable UI components
- │   ├── pages/            # Pages (Home, Camp Details, Dashboards)
- │   ├── hooks/            # Custom hooks
- │   ├── utils/            # Utility functions
- │   ├── services/         # API calls
- │   ├── routes/           # Protected and public routes
- │   ├── App.js            # Main app component
- │   ├── index.js          # Entry point
- │   ├── styles/           # Global styles
- │   └── assets/           # Static files
- ├── .env                  # Environment variables
- ├── package.json          # Dependencies
- ├── README.md             # Documentation
-```
-
----
-
 ## 📊 Dashboard Features  
 
 ### 🏥 Organizer Dashboard  
@@ -157,60 +170,5 @@ npm run dev
 - **Analytics:** Charts displaying camp participation data  
 - **Payment History:** Track past and current payments  
 
----
 
-## 📌 Available Camps Page  
-
-- Displays all added camps  
-- Features search, sorting, and layout toggling  
-- Includes a "Details" button linking to the camp details page  
-
----
-
-## 📖 Camp Details Page  
-
-- Showcases full camp information  
-- Provides a "Join Camp" button that opens a registration modal  
-- Stores participant details in the database  
-
----
-
-## 🔍 Search and Sorting  
-
-- **Search Bar:** Find camps by name, date, or healthcare professional  
-- **Sorting Options:**  
-  - Most Registered  
-  - Camp Fees  
-  - Alphabetical Order  
-
-- **Layout Toggle:**  
-  - Default: 3-column card layout  
-  - Alternative: 2-column card layout  
-
----
-
-## 💳 Payment & Registration  
-
-- **Users can register for camps via a modal form**  
-- **Stripe Payment Integration:**  
-  - Displays "Pay" button if payment is pending  
-  - After payment, updates status and stores transaction details  
-- **Organizer confirms payment manually**  
-
----
-
-## ⭐ Feedback and Ratings  
-
-- **Participants can leave feedback after successful payment**  
-- **Feedback is stored and displayed on the home page**  
-
----
-
-## 👥 Contributors  
-
-👤 **Your Name**  
-📧 your.email@example.com  
-🔗 [GitHub](https://github.com/yourusername)  
-
----
 
