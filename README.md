@@ -130,7 +130,7 @@ Here are the key dependencies used in the **Medical Camps Management System**:
 
 1️⃣ Clone the repository  
 ```sh
-git clone https://github.com/yourusername/medical-camps.git
+git clone https://github.com/Bristyakter25/medical-camp-client.git
 cd medical-camps
 ```
 
