@@ -100,7 +100,6 @@ Here are the key dependencies used in the **Medical Camps Management System**:
   "cors": "^2.x.x",
   "dotenv": "^16.x.x",
   "jsonwebtoken": "^9.x.x",
-  "bcryptjs": "^2.x.x",
   "stripe": "^12.x.x",
   "cookie-parser": "^1.x.x",
   "multer": "^1.x.x",
