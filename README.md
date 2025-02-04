@@ -4,7 +4,7 @@ A comprehensive web application designed to manage medical camps efficiently. Us
 
 ## 🛠️ Technologies Used  
 
-## 🌐 **Frontend (Client-Side)**  
+### 🌐 **Frontend (Client-Side)**  
 ✅ **React.js** – Frontend framework for building UI  
 ✅ **React Router** – Client-side routing for navigation  
 ✅ **React Hook Form** – Form validation and handling  
@@ -12,14 +12,14 @@ A comprehensive web application designed to manage medical camps efficiently. Us
 ✅ **Recharts** – Data visualization for participant analytics  
 ✅ **Stripe API** – Payment integration  
 
-## 🔗 **Backend (Server-Side)**  
+### 🔗 **Backend (Server-Side)**  
 ✅ **Node.js** – Backend runtime for JavaScript  
 ✅ **Express.js** – Web framework for handling API requests  
 ✅ **MongoDB** – NoSQL database for storing data  
 ✅ **Firebase Authentication** – User authentication (email/password & social login)  
 ✅ **JWT (JSON Web Tokens)** – Secure user authentication & authorization  
  
-## ⚙️ **Other Tools & Libraries**  
+### ⚙️ **Other Tools & Libraries**  
 ✅ **Dotenv** – Environment variable management  
 ✅ **Nodemon** – Auto-restarting server during development  
 ✅ **Cors** – Cross-origin resource sharing for API requests  
