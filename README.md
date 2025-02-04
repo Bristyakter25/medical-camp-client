@@ -168,7 +168,19 @@ npm run dev
 - **Profile Management:** Update user details  
 - **Registered Camps:** View joined camps, payment status, and cancel option  
 - **Analytics:** Charts displaying camp participation data  
-- **Payment History:** Track past and current payments  
+- **Payment History:** Track past and current payments
+
+## 🌐 Live Demo  
+🔗 **[Live Demo]: (https://medical-camp-website.web.app/)** 
+
+## 📂 GitHub Repositories  
+- **Client (Frontend)**: [GitHub Link](#)  
+- **Server (Backend)**: [GitHub Link](#)  
+
+---
+
+
+
 
 
 
