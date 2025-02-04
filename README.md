@@ -1,8 +1,8 @@
-# 🏥 CareSphere (Medical Camps Management System)  
+## 🏥 CareSphere (Medical Camps Management System)  
 
 A comprehensive web application designed to manage medical camps efficiently. Users can explore, register, and participate in medical camps, while organizers can create and manage camps seamlessly.
 
-# 🛠️ Technologies Used  
+## 🛠️ Technologies Used  
 
 ## 🌐 **Frontend (Client-Side)**  
 ✅ **React.js** – Frontend framework for building UI  
@@ -24,7 +24,7 @@ A comprehensive web application designed to manage medical camps efficiently. Us
 ✅ **Nodemon** – Auto-restarting server during development  
 ✅ **Cors** – Cross-origin resource sharing for API requests  
 
-# 🚀 Key Features  
+## 🚀 Key Features  
 
 ### 🏠 **Home Page Features**  
 - **Navbar:** Dynamic, with profile dropdown for logged-in users  
@@ -61,7 +61,7 @@ A comprehensive web application designed to manage medical camps efficiently. Us
 - **Confirmation System:** Organizer manually confirms payments  
 - **Cancellation System:** Participants can cancel before payment; organizers can manage registrations  
 
-# 📦 Dependencies  
+## 📦 Dependencies  
 
 Here are the key dependencies used in the **Medical Camps Management System**:
 
