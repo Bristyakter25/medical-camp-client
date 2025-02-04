@@ -12,9 +12,9 @@ A comprehensive web application designed to manage medical camps efficiently. Us
 - [Dashboard Features](#dashboard-features)
   - [Organizer Dashboard](#organizer-dashboard)
   - [Participant Dashboard](#participant-dashboard)
-- [Available Camps Page](#available-camps-page)
-- [Camp Details Page](#camp-details-page)
-- [Search and Sorting](#search-and-sorting)
+
+
+
 - [Payment & Registration](#payment--registration)
 - [Feedback and Ratings](#feedback-and-ratings)
 - [Contributors](#contributors)
@@ -22,39 +22,42 @@ A comprehensive web application designed to manage medical camps efficiently. Us
 
 ---
 
-## 🎯 Features  
+# 🚀 Key Features  
 
-✅ **User Authentication & Authorization** (Login, Register, Social Login)  
-✅ **Dynamic Navbar** (Logo, Links, Profile Dropdown)  
-✅ **Home Page Sections:**  
-   - **Hero Banner**: Displays success stories through a slider  
-   - **Popular Camps**: Showcasing the top six camps with the highest participant count  
-   - **See All Camps Button**: Redirects to the "Available Camps" page  
-✅ **Camp Listing & Searching:**  
-   - Display all available medical camps  
-   - Filter and search for camps by keywords, date, etc.  
-   - Sort by most registered, camp fees, and alphabetical order  
-✅ **Camp Registration & Participant Modal:**  
-   - Allows users to join a camp by filling out a modal form  
-   - Stores participant details in the database  
-   - Increases participant count dynamically  
-✅ **Organizer Dashboard (Private Route):**  
-   - Manage profile  
-   - Add, update, and delete camps  
-   - View and manage participant registrations  
-✅ **Participant Dashboard (Private Route):**  
-   - View registered camps  
-   - Make payments via Stripe  
-   - Provide feedback & ratings after successful payment  
-✅ **Payment & Confirmation System:**  
-   - Pay for camps securely using Stripe  
-   - Track payment & confirmation status  
-✅ **Feedback & Ratings System:**  
-   - Participants can leave reviews  
-   - Display feedback on the home page  
-✅ **User-Friendly UI/UX & Responsive Layout**
+### 🏠 **Home Page Features**  
+- **Navbar:** Dynamic, with profile dropdown for logged-in users  
+- **Hero Banner:** Slider showcasing success stories  
+- **Popular Camps Section:** Displays top six camps with the highest participant count  
+- **"See All Camps" Button:** Redirects to "Available Camps" page  
 
----
+### 🏕 **Camps Management**  
+- **Available Camps Page:** Lists all camps with search, sorting, and layout toggle  
+- **Camp Details Page:** Shows full camp information with a "Join Camp" button  
+- **Registration Modal:** Collects participant details and saves to the database  
+- **Participant Count:** Automatically updates when a user joins a camp  
+
+### 📊 **Organizer Dashboard (Private Route)**  
+- **Profile Management:** Update name, image, and contact info  
+- **Add A Camp:** Create new camps with validation  
+- **Manage Camps:** Edit or delete existing camps  
+- **Manage Registered Camps:** View participants, confirm payments, or cancel registrations  
+
+### 👤 **Participant Dashboard (Private Route)**  
+- **Profile Management:** Update user details  
+- **Registered Camps:** View joined camps, payment status, and cancel option  
+- **Analytics:** Visual charts for registered camps  
+- **Payment History:** Track past and current payments  
+
+### 🔍 **Search & Sorting**  
+- **Search:** Find camps by name, date, or healthcare professional  
+- **Sorting Options:** Most Registered, Camp Fees, Alphabetical Order  
+- **Layout Toggle:** Switch between 3-column and 2-column view  
+
+### 💳 **Payment & Confirmation**  
+- **Stripe Payment Integration:** Secure transactions for camp registration  
+- **Payment Status:** "Paid" or "Unpaid" with a pay button  
+- **Confirmation System:** Organizer manually confirms payments  
+- **Cancellation System:** Participants can cancel before payment; organizers can manage registrations  
 
 ## 🚀 Installation
 
