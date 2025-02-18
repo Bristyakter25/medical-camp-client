@@ -1,3 +1,4 @@
+import { InfinitySpin } from "react-loader-spinner";
 import useParticipants from "../../../hooks/useParticipants";
 
 
@@ -6,7 +7,14 @@ const TotalFees = () => {
   const { participants, loading } = useParticipants();
 
   if (loading) {
-    return <p>Loading participants...</p>;
+    return <div className="flex items-center justify-center min-h-screen">
+    <InfinitySpin
+      visible={true}
+      width="200"
+      color="#4fa94d"
+      ariaLabel="infinity-spin-loading"
+    />
+  </div>;
   }
 
   // Calculate total fees per participant

@@ -8,7 +8,7 @@ const AdminProfile = ({ admin, onUpdate }) => {
         <div className="font-bold text-xl mb-2">{admin.name}</div>
         <p className="text-gray-700 text-base">{admin.email}</p>
         <button 
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" 
+          className="btn bg-[#C5BAFF] my-5 glass text-violet-500 w-full"
           onClick={() => onUpdate(admin)}
         >
           Update

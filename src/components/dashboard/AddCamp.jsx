@@ -11,7 +11,7 @@ const AddCamp = () => {
 
       const onSubmit = async (data) => {
         try {
-          const response = await fetch("http://localhost:5000/addCamp", {
+          const response = await fetch("https://medical-camp-server-five.vercel.app/addCamp", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
@@ -28,7 +28,7 @@ const AddCamp = () => {
       };
   return ( 
       <div>
-      <h1 className="text-3xl text-center font-bold">Add Camp!</h1>
+      <h1 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">Add a Camp!</h1>
       <div className="hero w-full">
         <div className="hero-content flex-col w-full">
           <div className="bg-base-100 w-full max-w-4xl shadow-2xl p-6">
@@ -122,7 +122,7 @@ const AddCamp = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary w-full">Submit</button>
+                <button className="btn bg-[#C5BAFF] text-xl glass text-violet-500 w-full">Submit</button>
               </div>
             </form>
           </div>
@@ -135,11 +135,4 @@ const AddCamp = () => {
 
 export default AddCamp;
 
-// Camp Name
-// Image
-// Camp Fees
-// Date & Time
-// Location
-// Healthcare Professional Name
-// participant count(starts at 0)
-// Description
+

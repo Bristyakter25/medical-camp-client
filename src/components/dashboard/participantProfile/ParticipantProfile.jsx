@@ -2,22 +2,23 @@ import React, { useContext, useEffect, useState } from "react";
 import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { InfinitySpin } from "react-loader-spinner";
 
 const ParticipantProfile = () => {
   const [participant, setParticipant] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true); 
   const axiosSecure = UseAxiosSecure();
-  const { user } = useContext(AuthContext); // Access the logged-in user's info
+  const { user } = useContext(AuthContext); 
 
   useEffect(() => {
     const fetchParticipant = async () => {
       try {
-        // Fetch participants from the server
+        
         const response = await axiosSecure.get("/participants");
         const participants = response.data;
 
-        // Find the logged-in user's data
+        
         const loggedInParticipant = participants.find(
           (p) => p.participantEmail === user?.email
         );
@@ -41,14 +42,14 @@ const ParticipantProfile = () => {
           confirmButtonText: "OK",
         });
       } finally {
-        setLoading(false); // Stop loading after data is fetched
+        setLoading(false); 
       }
     };
 
     if (user?.email) {
       fetchParticipant();
     } else {
-      setLoading(false); // Stop loading if no user is logged in
+      setLoading(false); 
     }
   }, [axiosSecure, user?.email]);
 
@@ -83,7 +84,14 @@ const ParticipantProfile = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>; // Loading spinner or message
+    return <div className="flex items-center justify-center min-h-screen">
+            <InfinitySpin
+              visible={true}
+              width="200"
+              color="#4fa94d"
+              ariaLabel="infinity-spin-loading"
+            />
+          </div>; 
   }
 
   if (!participant) {
@@ -92,7 +100,7 @@ const ParticipantProfile = () => {
 
   return (
     <div className="container mx-auto">
-      <h2 className="text-center text-3xl mt-8 mb-4 font-bold">
+      <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">
         Participant Profile
       </h2>
       <div className="flex flex-wrap justify-center">
@@ -111,7 +119,7 @@ const ParticipantProfile = () => {
               </p>
               <p className="text-black">Age: {participant.age}</p>
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+                className="btn bg-[#C5BAFF] my-5 glass text-violet-500 w-full"
                 onClick={() => setIsEditing(true)}
               >
                 Update
@@ -151,7 +159,7 @@ const ParticipantProfile = () => {
               <input
                 type="text"
                 name="image"
-                value={participant.photoURL || ""}
+                value={user.photoURL || ""}
                 onChange={handleChange}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
@@ -170,13 +178,13 @@ const ParticipantProfile = () => {
             </div>
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-[#A594F9] glass hover:bg-[#C4D9FF] text-violet-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Save
             </button>
             <button
               type="button"
-              className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="ml-4 bg-red-500 glass hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               onClick={() => setIsEditing(false)}
             >
               Cancel

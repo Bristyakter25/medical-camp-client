@@ -3,6 +3,8 @@ import React from 'react';
 import PopularCamps from '../../components/popularCamps/PopularCamps';
 import FeedbackDisplay from './FeedbackDisplay';
 import Banner from './Banner';
+import Methods from './Methods';
+
 
 
 const Home = () => {
@@ -11,6 +13,7 @@ const Home = () => {
            <Banner></Banner>
             <PopularCamps></PopularCamps>
             <FeedbackDisplay></FeedbackDisplay>
+          <Methods></Methods>
         </div>
     );
 };

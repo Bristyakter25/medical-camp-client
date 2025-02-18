@@ -10,7 +10,8 @@ import pic6 from '../../assets/camp images/medical-camp-6.jpg';
 
 const Banner = () => {
     return (
-        <Carousel >
+        <div className="my-5">
+            <Carousel >
         <div>
             <img src={pic1}/>
             
@@ -36,6 +37,7 @@ const Banner = () => {
             
         </div>
     </Carousel>
+        </div>
     );
 };
 

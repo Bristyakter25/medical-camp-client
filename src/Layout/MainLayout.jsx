@@ -3,12 +3,14 @@ import Navbar from "../shared/Navbar/Navbar";
 import Footer from "../shared/Navbar/footer/Footer";
 
 
+
 const MainLayout = () => {
     return (
-        <div >
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div className="bg-white dark:bg-[#09122C] text-black dark:text-white min-h-screen">
+            <Navbar />
+            
+            <Outlet />
+            <Footer />
         </div>
     );
 };

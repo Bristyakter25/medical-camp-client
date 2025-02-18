@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { IoTrashBinSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -6,7 +7,7 @@ const ManageCamp = () => {
   const [camps, setCamps] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/addCamp")
+    fetch("https://medical-camp-server-five.vercel.app/addCamp")
       .then((res) => res.json())
       .then((data) => {
         setCamps(data);
@@ -25,7 +26,7 @@ const ManageCamp = () => {
 
     if (isConfirmed.isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:5000/addCamp/${id}`, {
+        const response = await fetch(`https://medical-camp-server-five.vercel.app/addCamp/${id}`, {
           method: "DELETE",
         });
         
@@ -81,12 +82,12 @@ const ManageCamp = () => {
                 <td className="border border-gray-300 px-2 py-2">{camp.healthcareName}</td>
                 <td className="border border-gray-300 px-4 py-2">
                   <Link to={`/dashboard/updateCamp/${camp._id}`}>
-                    <button className="btn bg-blue-500 text-white px-4 py-1 rounded mr-2">
+                    <button className="btn bg-[#A594F9] glass hover:bg-[#C4D9FF] text-violet-600 font-bold px-4 py-1 rounded mr-2">
                       Update
                     </button>
                   </Link>
                   <button onClick={() => handleDelete(camp._id)} className="btn bg-red-500 text-white px-4 py-1 rounded">
-                    Delete
+                  <IoTrashBinSharp />
                   </button>
                 </td>
               </tr>

@@ -2,6 +2,8 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import DarkModeToggle from "../../components/darkmode/DarkModeToggle";
+
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -12,100 +14,81 @@ const Navbar = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
-  const isLoginPage = location.pathname === "/login" || "/register";
-  const links = (
-    <>
-      <div className="gap-x-5 flex">
-        <NavLink to="/">
-          <li>Home</li>
-        </NavLink>
-        <NavLink to='availableCamps'><li>Available Camps</li></NavLink>
 
-        {user ? (
-          <>
-            <span className="text-black">
-              {/* User Profile Picture */}
-              {user.photoURL && (
-                <div className="dropdown">
-                  <div tabIndex={0}  className=" m-1">
-                    <img
-                      src={user.photoURL}
-                      alt="User Profile"
-                      className="w-8 h-8 rounded-full "
-                    />
-                  </div>
-                  <ul
-                    tabIndex={0}
-                    className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
-                  >
-                    <li className="text-center my-3">{user.displayName}</li>
-                    <li>
-                      <button onClick={handleLogOut} className="btn ">
-                        Log Out
-                      </button>
-                    </li>
-                    <li>
-                      <Link to='/dashboard/campChart'><button  className="btn text-center btn-ghost">
-                        Dashboard
-                      </button></Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </span>
-          </>
-        ) : (
-          <>
-            <li>
-              <Link to="/logIn">Join Us</Link>
-            </li>
-          </>
-        )}
+  const NavLinks = () => (
+    <>
+    <div className="gap-x-5 flex ">
+      <NavLink to="/" className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">Home</NavLink>
+      <NavLink to="/availableCamps" className="text-xl hover:text-blue-500 text-[#4635B1] font-semibold">Available Camps</NavLink>
       </div>
-    </>
+      </>
   );
+  
+  const isLoginPage = location.pathname === "/login" || location.pathname === "/register";
+
   return (
-    <div
-      className={`navbar bg-slate-50 ${
-        isLoginPage ? "bg-slate-300" : "bg-white"
-      }`}
-    >
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
+    <div className={`${isLoginPage ? "bg-[#F5EFFF]" : "bg-white"}`}>
+      <div className="navbar max-w-[1000px] mx-auto px-4">
+        {/* Left Side (Logo + Toggle) */}
+        <div className="navbar-start">
+          <div className="dropdown lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <NavLinks />
+            </ul>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
-            {links}
+          <div className="flex items-center">
+            <img className="w-10 h-10 rounded-full" src={logo} alt="Logo" />
+            <Link to="/" className="ml-2 text-2xl text-blue-500 font-bold">CareSphere</Link>
+          </div>
+        </div>
+
+        {/* Center (Navigation Links) */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <NavLinks />
           </ul>
         </div>
-        <img className="w-10 h-10 rounded-full" src={logo} alt="" />
-        <a className="ml-2 text-xl">CareSphere</a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
-      </div>
-      <div className="navbar-end">
-        {/* <Link to='/login'><button className='btn'>Join Us</button></Link> */}
+
+        {/* Right Side (Dark Mode + User Profile / Join Us) */}
+        <div className="navbar-end flex gap-4">
+          <DarkModeToggle /> {/* Dark Mode Button */}
+          {user ? <UserProfile user={user} handleLogOut={handleLogOut} /> : <Link to="/login" className="btn">Join Us</Link>}
+        </div>
       </div>
     </div>
   );
 };
+
+
+
+
+// Separate User Profile Component
+const UserProfile = ({ user, handleLogOut }) => (
+  <div className="dropdown dropdown-end">
+    <div tabIndex={0} role="button" className="m-1 flex items-center cursor-pointer">
+      <img src={user.photoURL} alt="User Profile" className="w-8 h-8 rounded-full" />
+    </div>
+    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+      <li className="text-center my-3 font-semibold">{user.displayName}</li>
+      <li>
+        <button onClick={handleLogOut} className="btn w-full">Log Out</button>
+      </li>
+      <li>
+        <Link to="/dashboard/campChart" className="btn text-center btn-ghost w-full">Dashboard</Link>
+      </li>
+    </ul>
+  </div>
+);
 
 export default Navbar;

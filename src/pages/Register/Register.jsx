@@ -39,7 +39,7 @@ const Register = () => {
             };
   
             // Store the updated user in the database
-            fetch("http://localhost:5000/users", {
+            fetch("https://medical-camp-server-five.vercel.app/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -149,7 +149,7 @@ const Register = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="btn w-full bg-[#C5BAFF] glass text-violet-500">Register</button>
               </div>
             </form>
             <div className="divider">OR</div>

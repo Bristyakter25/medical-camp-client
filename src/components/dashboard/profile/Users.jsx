@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import UseAxiosSecure from "../../../hooks/UseAxiosSecure";  // Import your axiosSecure hook
+import { InfinitySpin } from "react-loader-spinner";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -40,11 +41,18 @@ const Users = () => {
     }
   };
 
-  if (loading) return <p>Loading users...</p>;
+  if (loading) return <div className="flex items-center justify-center min-h-screen">
+          <InfinitySpin
+            visible={true}
+            width="200"
+            color="#4fa94d"
+            ariaLabel="infinity-spin-loading"
+          />
+        </div>;
 
   return (
-    <div>
-      <h1>Admin Dashboard</h1>
+    <div className="lg:w-[800px] w-[380px] mx-auto">
+      <h1 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">Admin Dashboard</h1>
       <table>
         <thead>
           <tr>

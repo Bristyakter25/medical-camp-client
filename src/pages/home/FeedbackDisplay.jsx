@@ -28,8 +28,8 @@ const FeedbackDisplay = () => {
 
   return (
     <div className="container mx-auto my-10 ">
-      <h2 className="text-center text-3xl mt-8 mb-4 font-bold">
-        Feedback List
+      <h2 className="text-center text-3xl mt-16 mb-10 text-[#A294F9] font-bold">
+        Our Clients Feedback
       </h2>
       {/* Swiper Component */}
       <Swiper
@@ -52,14 +52,14 @@ const FeedbackDisplay = () => {
                     className="w-12 h-12 rounded-full mr-4 "
                   />
                   <div>
-                    <h3 className="font-semibold text-xl ">{feedback.name}</h3>
-                    <p className="text-gray-500 text-sm ">{feedback.email}</p>
+                    <h3 className="font-bold text-black  text-xl ">{feedback.name}</h3>
+                    <p className="text-gray-700 text-sm ">{feedback.email}</p>
                   </div>
                 </div>
                 {/* Display the feedback text */}
                 <div className="px-10">
                 <p className="text-gray-700 text-center ">{feedback.feedback}</p>
-                <p className="text-gray-500 text-xs mt-2 text-center">
+                <p className="text-gray-500  mt-2 text-center">
                   {new Date(feedback.createdAt).toLocaleDateString()}
                 </p>
                 </div>

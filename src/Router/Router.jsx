@@ -97,17 +97,17 @@ export const router = createBrowserRouter([
             },
             {
               path:'manageCamps',
-              element:<PrivateRoutes></PrivateRoutes>
+              element:<PrivateRoutes><ManageCamp></ManageCamp></PrivateRoutes>
             },
             {
               path:'users',
-              element:<PrivateRoutes></PrivateRoutes>
+              element:<PrivateRoutes><Users></Users></PrivateRoutes>
             },
             
             {
               path: 'updateCamp/:id', 
               element: <PrivateRoutes><UpdateCamp /></PrivateRoutes>,
-              loader: ({ params }) => fetch(`http://localhost:5000/addCamp/${params.id}`) 
+              loader: ({ params }) => fetch(`https://medical-camp-server-five.vercel.app/addCamp/${params.id}`) 
             },
             {
               path: 'registeredCamps',

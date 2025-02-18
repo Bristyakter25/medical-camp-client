@@ -2,21 +2,29 @@ import { Link } from "react-router-dom";
 import useParticipants from "../../../hooks/useParticipants";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { InfinitySpin } from "react-loader-spinner";
 
 const RegisteredCamps = () => {
   const { participants, loading } = useParticipants();
   const { user } = useContext(AuthContext);
 
   if (loading) {
-    return <p>Loading participants...</p>;
+    return <div className="flex items-center justify-center min-h-screen">
+                <InfinitySpin
+                  visible={true}
+                  width="200"
+                  color="#4fa94d"
+                  ariaLabel="infinity-spin-loading"
+                />
+              </div>; ;
   }
 
-  // Check if the user or participants are not loaded yet
+ 
   if (!user || !participants) {
     return <p>No registered camps found for you.</p>;
   }
 
-  // Filter participants for the logged-in user
+  
   const userParticipants = participants.filter(
     (participant) => participant.participantEmail === user.email
   );
@@ -43,8 +51,8 @@ const RegisteredCamps = () => {
   const formattedTotals = Object.values(totals);
 
   return (
-    <div>
-      <h2>Registered Camps</h2>
+    <div className="lg:w-[900px] w-[380px] mx-auto">
+      <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold ">Registered Camps</h2>
       {formattedTotals.length === 0 ? (
         <p>No registered camps found for you.</p>
       ) : (

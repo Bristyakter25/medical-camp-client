@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const CampDetailsCard = ({ detail}) => {
    
@@ -32,7 +33,7 @@ const CampDetailsCard = ({ detail}) => {
         };
        
 
-          fetch("http://localhost:5000/joinCamp", {
+          fetch("https://medical-camp-server-five.vercel.app/joinCamp", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(participantData),
@@ -40,25 +41,31 @@ const CampDetailsCard = ({ detail}) => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.message) {
-                    alert(result.message);
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You successfully joined the camp!",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                     reset();
                 }
             })
             .catch((error) => console.error("Error joining camp:", error));
     };
   return (
-    <div>
-      <img className="w-full h-[400px]" src={image} alt="" />
-      <h2>{name}</h2>
-      <p>Camp Fees: {fees}</p>
-      <p>Date: {date}</p>
-      <p>Description: {description}</p>
-      <p>Location: {location}</p>
-      <p>Doctor Name: {healthcareName}</p>
-      <p>Participants: {participantCount}</p>
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
+    <div className="my-5">
+      <img className="w-full h-[400px] rounded-2xl" src={image} alt="" />
+      <h2 className="text-black font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
+      <p className="mb-2"><span className="text-black font-semibold "> Camp Fees:</span> {fees}</p>
+      <p className="mb-2"><span className="text-black font-semibold "> Date:</span> {date}</p>
+      <p className="mb-2"><span className="text-black font-semibold "> Description:</span>{description}</p>
+      <p className="mb-2"><span className="text-black font-semibold ">Location:</span> {location}</p>
+      <p className="mb-2"><span className="text-black font-semibold "> Healthcare Professional:</span>{healthcareName}</p>
+      <p lassName="mb-2"><span className="text-black font-semibold "> Participants:</span>{participantCount}</p>
+      
       <button
-        className="btn"
+        className="btn w-full bg-[#C5BAFF] my-5 glass text-violet-500"
         onClick={() => document.getElementById("my_modal_5").showModal()}
       >
         Join Camp

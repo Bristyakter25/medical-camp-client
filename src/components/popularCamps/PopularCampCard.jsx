@@ -9,7 +9,7 @@ const PopularCampCard = ({ popularCamp }) => {
     useEffect(() => {
         const fetchCampDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/addCamp/${_id}`);
+                const response = await fetch(`https://medical-camp-server-five.vercel.app/addCamp/${_id}`);
                 const data = await response.json();
                 setParticipantCount(data.participantCount);
             } catch (error) {
@@ -21,20 +21,20 @@ const PopularCampCard = ({ popularCamp }) => {
     }, [_id]);
 
     return (
-        <div>
-            <img className="w-[300px] h-[230px] rounded-2xl" src={image} alt="" />
-            <h2>{name}</h2>
-            <p>Fees: {fees}</p>
-            <p>Date: {date}</p>
-            <p>Location: {location}</p>
-            <p>Healthcare Professional: {healthcareName}</p>
-            <p>Participants: {participantCount? <>{participantCount}</>: 0 }</p>
-            <div className="flex space-x-5">
+        <div >
+            <img className="w-[370px] h-[230px] rounded-2xl mb-5" src={image} alt="" />
+            <h2 className="text-black  font-semibold h-[50px] text-center mb-3">{name}</h2>
+            <p className="mb-2"> <span className="text-black font-semibold "> Fees:</span> {fees}</p>
+            <p className="mb-2"><span className="text-black font-semibold "> Date:</span>{date}</p>
+            <p className="mb-2"><span className="text-black font-semibold ">Location:</span> {location}</p>
+            <p className="mb-2"><span className="text-black font-semibold "> Healthcare Professional:</span> {healthcareName}</p>
+            <p className="mb-2"><span className="text-black font-semibold "> Participants:</span> {participantCount? <>{participantCount}</>: 0 }</p>
+            <div className="flex space-x-2 my-3">
                 <Link to="/availableCamps">
-                    <button className="btn">See All Camps</button>
+                    <button className="btn bg-[#C4D9FF] glass text-violet-500">See All Camps</button>
                 </Link>
                 <Link to={`/popularCamps/${_id}`}>
-                    <button className="btn">Camp Details</button>
+                    <button className="btn bg-[#C5BAFF] glass text-violet-500">Camp Details</button>
                 </Link>
             </div>
         </div>

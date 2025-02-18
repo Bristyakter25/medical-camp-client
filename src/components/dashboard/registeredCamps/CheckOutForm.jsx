@@ -76,8 +76,16 @@ const CheckOutForm = () => {
         console.log('transaction id', paymentIntent.id);
         setTransactionId(paymentIntent.id);
 
-        if (!Array.isArray(participants)) {
-          console.error('participants is not an array:', participants);
+        // Find the participant for this email
+        const participant = participants.find(item => item.participantEmail === user.email);
+        
+        if (!participant) {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Participant not found.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          });
           return;
         }
 
@@ -86,19 +94,32 @@ const CheckOutForm = () => {
           price: totalPrice,
           transactionId: paymentIntent.id,
           date: new Date(),
-          participantId: participants.map(item => item._id),
-          campId: participants.map(item => item.campId),
+          participantId: participant._id,  // Correctly finding participantId
+          campId: participant.campId,  // Correctly finding campId
           status: 'pending',
         };
 
-        const res = await axiosSecure.post('/payments', payment);
-        console.log('payment saved', res.data);
-        Swal.fire({
-          title: 'Payment Successful!',
-          text: `Your transaction ID is ${paymentIntent.id}`,
-          icon: 'success',
-          confirmButtonText: 'OK'
-        });
+        try {
+          const res = await axiosSecure.post('/payments', payment);
+          console.log('payment saved', res.data);
+          
+          // After payment, you may want to update participant status or delete if necessary
+          // You should consider handling participant deletion separately on the backend
+          Swal.fire({
+            title: 'Payment Successful!',
+            text: `Your transaction ID is ${paymentIntent.id}`,
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
+        } catch (err) {
+          console.error('Payment saving error:', err);
+          Swal.fire({
+            title: 'Error!',
+            text: 'There was an issue saving your payment.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          });
+        }
       }
     }
   };

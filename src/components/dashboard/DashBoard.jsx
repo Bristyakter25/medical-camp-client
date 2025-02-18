@@ -1,9 +1,10 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { FaUserTie } from "react-icons/fa";
-import { FaWpforms } from "react-icons/fa";
-import { MdOutlineManageAccounts } from "react-icons/md";
-import { GiArchiveRegister } from "react-icons/gi";
+import { NavLink, Outlet } from "react-router-dom";
+import { FaClinicMedical, FaHospitalUser, FaMoneyCheckAlt, FaRegAddressBook, FaUsers, FaUserTie } from "react-icons/fa";
+
+import { MdManageAccounts } from "react-icons/md";
+
 import UseAdmin from "../../hooks/UseAdmin";
+import { TbBrandGoogleAnalytics, TbCashRegister } from "react-icons/tb";
 
 
 const DashBoard = () => {
@@ -13,43 +14,45 @@ const DashBoard = () => {
  
   return (
     <div className="flex">
-      <div className="w-64 min-h-full mx-auto bg-sky-400">
+      <div className="w-72 h-[900px] mx-auto bg-[#F5EFFF] p-5 ">
         <ul className="menu">
          {
           isAdmin? <>
+          <h2 className="text-center my-5 font-bold text-xl text-[#4635B1]">Organizers Dashboard</h2>
            <li>
-            <NavLink to="/dashboard/adminProfile"><FaUserTie /> Organizer Profile</NavLink>
+            <NavLink to="/dashboard/adminProfile"><FaHospitalUser />Organizer Profile</NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/addCamp"><FaWpforms /> Add Camp</NavLink>
+            <NavLink to="/dashboard/addCamp"><FaClinicMedical /> Add Camp</NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/users"><FaWpforms /> Users</NavLink>
+            <NavLink to="/dashboard/users"><FaUsers /> Users</NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/manageCamps"><MdOutlineManageAccounts /> Manage Camps</NavLink>
+            <NavLink to="/dashboard/manageCamps"><MdManageAccounts />Manage Camps</NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/manageRegisteredCamps"><GiArchiveRegister /> Manage Registered Camps</NavLink>
+            <NavLink to="/dashboard/manageRegisteredCamps"><TbCashRegister /> Manage Registered Camps</NavLink>
           </li>
           </> : <>
          
           </>
          }
         </ul>
-        <div className="divider">Default</div>
+        <div className="divider"></div>
         <ul className="menu">
+        <h2 className="text-center my-5 font-bold text-xl text-[#4635B1]">Participants Dashboard</h2>
           <li>
-            <NavLink to='/dashboard/campChart'><FaUserTie /> Analytics.</NavLink>
+            <NavLink to='/dashboard/campChart'><TbBrandGoogleAnalytics /> Analytics</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/participantProfile'><FaWpforms /> Participant Profile</NavLink>
+            <NavLink to='/dashboard/participantProfile'><FaUserTie /> Participant Profile</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/registeredCamps'><MdOutlineManageAccounts /> Registered Camps</NavLink>
+            <NavLink to='/dashboard/registeredCamps'><FaRegAddressBook /> Registered Camps</NavLink>
           </li>
           <li>
-            <NavLink to='/dashboard/payments'><GiArchiveRegister /> Payment History</NavLink>
+            <NavLink to='/dashboard/payments'><FaMoneyCheckAlt /> Payment History</NavLink>
           </li>
         </ul>
 

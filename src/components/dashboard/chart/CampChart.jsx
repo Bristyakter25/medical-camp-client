@@ -32,7 +32,7 @@ const CampChart = () => {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold text-center mt-8">Registered Camps</h2>
+      <h2 className="text-center w-full mt-5 mb-10 text-3xl text-[#A294F9] font-bold">Analysis of Your Registered Camps</h2>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart data={campData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <defs>

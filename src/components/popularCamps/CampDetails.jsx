@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CampDetailsCard from "./CampDetailsCard";
+import { InfinitySpin } from "react-loader-spinner";
 
 
 const CampDetails = () => {
@@ -9,7 +10,7 @@ const CampDetails = () => {
     const [loading,setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/popularCamps/${id}`)
+        fetch(`https://medical-camp-server-five.vercel.app/popularCamps/${id}`)
         .then((res)=> res.json())
         .then((data)=>{
             setDetails(data);
@@ -18,13 +19,20 @@ const CampDetails = () => {
 
     },[id])
     if (loading) {
-        return <p>Loading...</p>;
+        return <div className="flex items-center justify-center min-h-screen">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#4fa94d"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
     }
     return (
         <div>
-            <h2 className='text-center text-2xl font-bold my-5'>This is Details Page</h2>
+            <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold ">Camp Details </h2>
 
-            <div className="lg:w-[1024px] mx-auto w-[400px]">
+            <div className="lg:w-[900px] mx-auto w-[380px]">
         <CampDetailsCard detail={details}></CampDetailsCard>
         </div>
             

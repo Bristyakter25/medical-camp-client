@@ -31,7 +31,7 @@ const AvailableCampDCard = ({detail}) => {
               };
              
       
-                fetch("http://localhost:5000/joinCamp", {
+                fetch("https://medical-camp-server-five.vercel.app/joinCamp", {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify(participantData),
@@ -46,19 +46,19 @@ const AvailableCampDCard = ({detail}) => {
                   .catch((error) => console.error("Error joining camp:", error));
           };
     return (
-        <div>
-            <div>
-      <img className="w-full h-[400px]" src={image} alt="" />
-      <h2>{name}</h2>
-      <p>Camp Fees: {fees}</p>
-      <p>Date: {date}</p>
-      <p>Description: {description}</p>
-      <p>Location: {location}</p>
-      <p>Doctor Name: {healthcareName}</p>
-      <p>Participants: {participantCount}</p>
-      {/* Open the modal using document.getElementById('ID').showModal() method */}
+        <div className="lg:w-[900px] w-[380px] mx-auto my-5">
+           
+      <img className="w-full h-[450px] rounded-2xl" src={image} alt="" />
+      <h2 className="text-black font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
+      <p className="mb-2"><span className="text-black font-semibold "> Camp Fee:</span> {fees}</p>
+      <p className="mb-2"><span className="text-black font-semibold "> Date:</span>{date}</p>
+      <p className="mb-2"><span className="text-black font-semibold "> Description:</span>{description}</p>
+      <p className="mb-2"><span className="text-black font-semibold ">Location:</span>{location}</p>
+      <p className="mb-2"><span className="text-black font-semibold "> Healthcare Professional:</span> {healthcareName}</p>
+      <p className="mb-2"><span className="text-black font-semibold "> Participants:</span>{participantCount}</p>
+      
       <button
-        className="btn"
+        className="btn w-full bg-[#C5BAFF] glass text-violet-500"
         onClick={() => document.getElementById("my_modal_5").showModal()}
       >
         Join Camp
@@ -92,14 +92,14 @@ const AvailableCampDCard = ({detail}) => {
         
           <div className="modal-action">
             <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
+             
               <button className="btn">Close</button>
             </form>
           </div>
         </div>
       </dialog>
     </div>
-        </div>
+        
     );
 };
 

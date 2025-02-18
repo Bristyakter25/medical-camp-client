@@ -82,7 +82,7 @@ const AdminList = () => {
 
   return (
     <div className="container mx-auto">
-      <h2 className="text-center text-3xl mt-8 mb-4 font-bold">Admin Profile</h2>
+      <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">Admin Profile</h2>
       <div className="flex flex-wrap justify-center">
         {admin && !isEditing && <AdminProfile admin={admin} onUpdate={handleUpdate} />}
         {isEditing && (
@@ -119,13 +119,13 @@ const AdminList = () => {
             </div>
             <button 
               type="submit" 
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-[#A594F9] glass hover:bg-[#C4D9FF] text-violet-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Save
             </button>
             <button 
               type="button" 
-              className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+              className="ml-4 bg-red-500 hover:bg-red-700 glass text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
               onClick={() => setIsEditing(false)}
             >
               Cancel
