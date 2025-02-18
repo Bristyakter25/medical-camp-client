@@ -23,12 +23,12 @@ const PopularCampCard = ({ popularCamp }) => {
     return (
         <div >
             <img className="w-[370px] h-[230px] rounded-2xl mb-5" src={image} alt="" />
-            <h2 className="text-black  font-semibold h-[50px] text-center mb-3">{name}</h2>
-            <p className="mb-2"> <span className="text-black font-semibold "> Fees:</span> {fees}</p>
-            <p className="mb-2"><span className="text-black font-semibold "> Date:</span>{date}</p>
-            <p className="mb-2"><span className="text-black font-semibold ">Location:</span> {location}</p>
-            <p className="mb-2"><span className="text-black font-semibold "> Healthcare Professional:</span> {healthcareName}</p>
-            <p className="mb-2"><span className="text-black font-semibold "> Participants:</span> {participantCount? <>{participantCount}</>: 0 }</p>
+            <h2 className="text-black dark:text-white  font-semibold h-[50px] text-center mb-3">{name}</h2>
+            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Fees:</span> {fees}</p>
+            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Date:</span>{date}</p>
+            <p className="mb-2"><span className="text-black dark:text-white font-semibold ">Location:</span> {location}</p>
+            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Healthcare Professional:</span> {healthcareName}</p>
+            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Participants:</span> {participantCount? <>{participantCount}</>: 0 }</p>
             <div className="flex space-x-2 my-3">
                 <Link to="/availableCamps">
                     <button className="btn bg-[#C4D9FF] glass text-violet-500">See All Camps</button>

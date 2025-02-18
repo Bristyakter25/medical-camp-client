@@ -68,7 +68,7 @@ const Users = () => {
               <td className="px-5">{user.name}</td>
               <td className="px-5">{user.email}</td>
               <td className="px-5">{user.role}</td>
-              <td className="px-5">
+              <td className="px-5 dark:text-black">
                 <select
                   value={user.role}
                   onChange={(e) => updateRole(user._id, e.target.value)}

@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import DarkModeToggle from "../../components/darkmode/DarkModeToggle";
 
-
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const location = useLocation();
@@ -17,14 +16,21 @@ const Navbar = () => {
 
   const NavLinks = () => (
     <>
-    <div className="gap-x-5 flex ">
-      <NavLink to="/" className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">Home</NavLink>
-      <NavLink to="/availableCamps" className="text-xl hover:text-blue-500 text-[#4635B1] font-semibold">Available Camps</NavLink>
+      <div className="gap-x-5 flex ">
+        <NavLink to="/" className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">Home</NavLink>
+        <NavLink to="/availableCamps" className="text-xl hover:text-blue-500 text-[#4635B1] font-semibold">Available Camps</NavLink>
       </div>
-      </>
+    </>
   );
-  
+
+  // Check if the current path is Dashboard or Login/Register
+  const isDashboardPage = location.pathname.startsWith("/dashboard");
   const isLoginPage = location.pathname === "/login" || location.pathname === "/register";
+
+  // If it's a dashboard or login/register page, don't show the navbar
+  if (isDashboardPage) {
+    return null;
+  }
 
   return (
     <div className={`${isLoginPage ? "bg-[#F5EFFF]" : "bg-white"}`}>
@@ -70,12 +76,9 @@ const Navbar = () => {
   );
 };
 
-
-
-
 // Separate User Profile Component
 const UserProfile = ({ user, handleLogOut }) => (
-  <div className="dropdown dropdown-end">
+  <div className="dropdown dark:text-black dropdown-end">
     <div tabIndex={0} role="button" className="m-1 flex items-center cursor-pointer">
       <img src={user.photoURL} alt="User Profile" className="w-8 h-8 rounded-full" />
     </div>
@@ -85,7 +88,7 @@ const UserProfile = ({ user, handleLogOut }) => (
         <button onClick={handleLogOut} className="btn w-full">Log Out</button>
       </li>
       <li>
-        <Link to="/dashboard/campChart" className="btn text-center btn-ghost w-full">Dashboard</Link>
+        <Link to="/dashboard/allChart" className="btn text-center btn-ghost w-full">Dashboard</Link>
       </li>
     </ul>
   </div>

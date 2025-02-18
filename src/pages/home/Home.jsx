@@ -9,11 +9,17 @@ import Methods from './Methods';
 
 const Home = () => {
     return (
+      <div>
+        
+
+        
+       
         <div className='lg:w-3/5 mx-auto'>
-           <Banner></Banner>
+        <Banner ></Banner>
             <PopularCamps></PopularCamps>
             <FeedbackDisplay></FeedbackDisplay>
           <Methods></Methods>
+        </div>
         </div>
     );
 };

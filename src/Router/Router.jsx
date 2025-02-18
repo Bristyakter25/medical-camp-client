@@ -22,6 +22,7 @@ import ParticipantProfile from "../components/dashboard/participantProfile/Parti
 import ManageRegisteredCamps from "../components/dashboard/manageRegisteredCamps/ManageRegisteredCamps";
 import AdminList from "../components/dashboard/adminProfile/AdminList";
 import Feedback from "../components/dashboard/registeredCamps/Feedback";
+import ChartForShow from "../components/dashboard/ChartForAll/ChartForShow";
 
 
 export const router = createBrowserRouter([
@@ -55,6 +56,7 @@ export const router = createBrowserRouter([
           path:'addCamp/:id',
           element:<AvailableCampDetails></AvailableCampDetails>
         },
+        
         {
           path:'/dashboard',
           element:<DashBoard></DashBoard>,
@@ -88,6 +90,11 @@ export const router = createBrowserRouter([
             {
               path:'feedBack',
               element:<PrivateRoutes><Feedback></Feedback></PrivateRoutes>
+            },
+            {
+              path:'allChart',
+              element:<ChartForShow></ChartForShow>
+    
             },
 
             // Admin / Organizers Route
