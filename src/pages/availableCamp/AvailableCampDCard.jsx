@@ -49,13 +49,13 @@ const AvailableCampDCard = ({detail}) => {
         <div className="lg:w-[900px] w-[380px] mx-auto my-5">
            
       <img className="w-full h-[450px] rounded-2xl" src={image} alt="" />
-      <h2 className="text-black font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
-      <p className="mb-2"><span className="text-black font-semibold "> Camp Fee:</span> {fees}</p>
-      <p className="mb-2"><span className="text-black font-semibold "> Date:</span>{date}</p>
-      <p className="mb-2"><span className="text-black font-semibold "> Description:</span>{description}</p>
-      <p className="mb-2"><span className="text-black font-semibold ">Location:</span>{location}</p>
-      <p className="mb-2"><span className="text-black font-semibold "> Healthcare Professional:</span> {healthcareName}</p>
-      <p className="mb-2"><span className="text-black font-semibold "> Participants:</span>{participantCount}</p>
+      <h2 className="text-black dark:text-white font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
+      <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Camp Fee:</span> {fees}</p>
+      <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Date:</span>{date}</p>
+      <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Description:</span>{description}</p>
+      <p className="mb-2"><span className="text-black dark:text-white font-semibold ">Location:</span>{location}</p>
+      <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Healthcare Professional:</span> {healthcareName}</p>
+      <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Participants:</span>{participantCount}</p>
       
       <button
         className="btn w-full bg-[#C5BAFF] glass text-violet-500"

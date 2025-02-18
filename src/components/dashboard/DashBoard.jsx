@@ -19,7 +19,7 @@ const DashBoard = () => {
           <div>
             <h2 className="text-center my-5 font-bold text-xl dark:text-[#A294F9] text-[#4635B1]" >Menu</h2>
             <li>
-              <NavLink to="/dashboard/allChart"> <MdQueryStats />Camp Participation Stats</NavLink>
+              <NavLink to="/dashboard/allChart"> <MdQueryStats />Camp Fees Distribution</NavLink>
             </li>
           <li>
             <NavLink to="/"><GrHome />Home</NavLink>

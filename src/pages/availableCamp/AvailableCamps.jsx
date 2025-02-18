@@ -56,8 +56,8 @@ const AvailableCamps = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">
+    <div >
+      <h2 className="text-center pt-24  w-full mb-5 text-3xl text-[#A294F9] font-bold">
         Available Camps
       </h2>
 
@@ -68,14 +68,14 @@ const AvailableCamps = () => {
           placeholder="Search camps by name, location, or date"
           value={searchQuery}
           onChange={handleSearch}
-          className="w-full p-2 mb-4 border rounded-md"
+          className="w-full dark:text-black p-2 mb-4 border rounded-md"
         />
 
         
         <select
           value={sortOption}
           onChange={handleSort}
-          className="w-full p-2 mb-4 border rounded-md"
+          className="w-full dark:text-black p-2 mb-4 border rounded-md"
         >
           <option value="">Sort By</option>
           <option value="mostRegistered">Most Registered</option>

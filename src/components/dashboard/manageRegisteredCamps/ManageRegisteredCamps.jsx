@@ -13,10 +13,10 @@ const ManageRegisteredCamps = () => {
 
   return (
     <div>
-      <h2 className="text-center w-full mt-16 text-3xl text-[#A294F9] font-bold mb-10">
+      <h2 className="text-center   mt-16 text-3xl text-[#A294F9] font-bold mb-10">
         Registered Participants
       </h2>
-      <div className="lg:w-[1024px] mx-auto w-[400px]">
+      <div className=" lg:w-[850px] w-[320px] mx-auto ">
         <table className="table-auto w-full">
           <thead>
             <tr>

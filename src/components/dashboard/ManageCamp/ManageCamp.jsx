@@ -56,10 +56,10 @@ const ManageCamp = () => {
 
   return (
     <div>
-      <h2 className="text-center w-full mt-16 text-3xl text-[#A294F9] font-bold mb-10">
+      <h2 className="text-center  mt-16 text-3xl text-[#A294F9] font-bold mb-10">
         Manage Camps
       </h2>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto w-[320px] lg:w-full">
         <table className="table table-auto w-full border-collapse border border-gray-300">
           {/* Table Header */}
           <thead className="bg-gray-100">

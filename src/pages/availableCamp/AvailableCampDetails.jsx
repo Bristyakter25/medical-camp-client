@@ -33,7 +33,7 @@ const AvailableCampDetails = () => {
     
     return (
         <div>
-            <h2 className="text-[#A294F9] my-5 text-3xl font-bold text-center">Available camp details</h2>
+            <h2 className="text-[#A294F9] my-5 text-3xl font-bold text-center pt-24">Available camp details</h2>
             <div>
                <AvailableCampDCard detail={details}></AvailableCampDCard>
             </div>

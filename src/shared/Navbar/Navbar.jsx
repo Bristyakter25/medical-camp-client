@@ -23,19 +23,20 @@ const Navbar = () => {
     </>
   );
 
-  // Check if the current path is Dashboard or Login/Register
+  
   const isDashboardPage = location.pathname.startsWith("/dashboard");
   const isLoginPage = location.pathname === "/login" || location.pathname === "/register";
 
-  // If it's a dashboard or login/register page, don't show the navbar
+  
   if (isDashboardPage) {
     return null;
   }
+  
 
   return (
-    <div className={`${isLoginPage ? "bg-[#F5EFFF]" : "bg-white"}`}>
-      <div className="navbar max-w-[1000px] mx-auto px-4">
-        {/* Left Side (Logo + Toggle) */}
+    <div className='  bg-[#F5EFFF] w-full dark:bg-[#A294F9] fixed top-0 z-10'>
+      <div className="navbar  max-w-[1000px] mx-auto px-4">
+       
         <div className="navbar-start">
           <div className="dropdown lg:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost">
@@ -55,7 +56,7 @@ const Navbar = () => {
           </div>
           <div className="flex items-center">
             <img className="w-10 h-10 rounded-full" src={logo} alt="Logo" />
-            <Link to="/" className="ml-2 text-2xl text-blue-500 font-bold">CareSphere</Link>
+            <Link to="/" className="ml-2 text-2xl dark:text-sky-200 text-blue-500 font-bold">CareSphere</Link>
           </div>
         </div>
 
