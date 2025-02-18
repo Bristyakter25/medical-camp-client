@@ -15,11 +15,11 @@ const Methods = () => {
   ];
 
   return (
-    <div className="lg:w-[900px] w-[380px] mx-auto my-16">
+    <div className="lg:w-full w-[320px] mx-auto my-16">
       <h2 className="text-center w-full mt-16 text-3xl text-[#A294F9] font-bold mb-10">
         Our Methods In Healing
       </h2>
-      <p className="text-black font-semibold text-center text-xl mb-10">
+      <p className="text-black dark:text-white font-semibold text-center text-xl mb-10">
         Empowering lives with innovative healing techniques, where care meets precision and results
         speak for themselves.
       </p>
@@ -39,7 +39,7 @@ const Methods = () => {
               )}
             </div>
             <h3 className="mt-4 text-lg  font-semibold">{method.title}</h3>
-            <p className="text-sm text-gray-600 mt-2">{method.description}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-200 mt-2">{method.description}</p>
           </div>
         ))}
       </div>

@@ -56,13 +56,13 @@ const CampDetailsCard = ({ detail}) => {
   return (
     <div className="my-5">
       <img className="w-full h-[400px] rounded-2xl" src={image} alt="" />
-      <h2 className="text-black font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
-      <p className="mb-2"><span className="text-black font-semibold "> Camp Fees:</span> {fees}</p>
-      <p className="mb-2"><span className="text-black font-semibold "> Date:</span> {date}</p>
-      <p className="mb-2"><span className="text-black font-semibold "> Description:</span>{description}</p>
-      <p className="mb-2"><span className="text-black font-semibold ">Location:</span> {location}</p>
-      <p className="mb-2"><span className="text-black font-semibold "> Healthcare Professional:</span>{healthcareName}</p>
-      <p lassName="mb-2"><span className="text-black font-semibold "> Participants:</span>{participantCount}</p>
+      <h2 className="text-black dark:text-white font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
+      <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Camp Fees:</span> {fees}</p>
+      <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Date:</span> {date}</p>
+      <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Description:</span>{description}</p>
+      <p className="mb-2"><span className="text-black font-semibold dark:text-white ">Location:</span> {location}</p>
+      <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Healthcare Professional:</span>{healthcareName}</p>
+      <p lassName="mb-2"><span className="text-black font-semibold dark:text-white"> Participants:</span>{participantCount}</p>
       
       <button
         className="btn w-full bg-[#C5BAFF] my-5 glass text-violet-500"
@@ -75,24 +75,24 @@ const CampDetailsCard = ({ detail}) => {
        
         <form onSubmit={handleSubmit(onSubmit)}>
                             <h2>Join Camp</h2>
-                            <input type="text" value={name} readOnly className="input" />
-                            <input type="number" value={fees} readOnly className="input" />
-                            <input type="text" value={location} readOnly className="input" />
-                            <input type="text" value={healthcareName} readOnly className="input" />
-                            <input type="text" value={user?.displayName} readOnly className="input" />
-                            <input type="email" value={user?.email} readOnly className="input" />
-                            <input type="number" placeholder="Age" {...register("age", { required: "Age is required" })} className="input" />
+                            <input  type="text" value={name} readOnly className="input dark:text-black" />
+                            <input type="number" value={fees} readOnly className="input dark:text-black" />
+                            <input type="text" value={location} readOnly className="input dark:text-black" />
+                            <input type="text" value={healthcareName} readOnly className="input dark:text-black" />
+                            <input type="text" value={user?.displayName} readOnly className="input dark:text-black" />
+                            <input type="email" value={user?.email} readOnly className="input dark:text-black" />
+                            <input type="number" placeholder="Age" {...register("age", { required: "Age is required" })} className="input dark:text-black" />
                             
-                            <input type="tel" placeholder="Phone Number" {...register("phone", { required: "Phone is required" })} className="input" />
+                            <input type="tel" placeholder="Phone Number" {...register("phone", { required: "Phone is required" })} className="input dark:text-black" />
                             
-                            <select {...register("gender", { required: "Gender is required" })} className="input">
+                            <select {...register("gender", { required: "Gender is required" })} className="input dark:text-black">
                                 <option value="">Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
                             </select>
                             
-                            <input type="text" placeholder="Emergency Contact" {...register("emergencyContact", { required: "Emergency contact is required" })} className="input" />
+                            <input type="text" placeholder="Emergency Contact" {...register("emergencyContact", { required: "Emergency contact is required" })} className="input dark:text-black" />
                             
                             <button type="submit" className="btn btn-primary">Join Camp</button>
                         </form>
@@ -111,14 +111,4 @@ const CampDetailsCard = ({ detail}) => {
 
 export default CampDetailsCard;
 
-// Camp Name (read-only)
-// Camp Fees(read-only)
-// Location(read-only)
-// Healthcare Professional Name(read-only)
-// Participant Name (from loggedIn info)
-// Participant Email(from loggedIn info)
-// Age
-// Phone Number
-// Gender
-// Emergency Contact
 

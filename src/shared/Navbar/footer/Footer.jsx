@@ -7,7 +7,7 @@ const Footer = () => {
   <nav>
     <h6 className="footer-title">Services</h6>
     <Link to="/" ><a className="link link-hover">Home</a></Link>
-    <Link to="/dashboard" ><a className="link link-hover">Dashboard</a></Link>
+    <Link to="/dashboard/allChart" ><a className="link link-hover">Dashboard</a></Link>
     <Link to="/availableCamps" ><a className="link link-hover">AvailableCamps</a></Link>
    
     

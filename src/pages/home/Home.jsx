@@ -4,6 +4,7 @@ import PopularCamps from '../../components/popularCamps/PopularCamps';
 import FeedbackDisplay from './FeedbackDisplay';
 import Banner from './Banner';
 import Methods from './Methods';
+import AboutUs from './AboutUs';
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
             <PopularCamps></PopularCamps>
             <FeedbackDisplay></FeedbackDisplay>
           <Methods></Methods>
+          <AboutUs></AboutUs>
         </div>
         </div>
     );

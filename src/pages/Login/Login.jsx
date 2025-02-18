@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-slate-300 min-h-screen">
+    <div className="bg-slate-300 min-h-screen pt-20">
       <h1 className="text-5xl text-center font-bold py-5">Login now!</h1>
       <div className="flex items-center justify-center gap-x-2 my-5">
         <p className="text-center hover:text-blue-500">
@@ -69,7 +69,7 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input dark:text-black input-bordered"
                   name="email"
                   required
                 />
@@ -81,7 +81,7 @@ const Login = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input dark:text-black input-bordered"
                   name="password"
                   required
                 />
@@ -93,7 +93,7 @@ const Login = () => {
 
             <div className="divider">OR</div>
             <Social></Social>
-            <p className="text-center py-3">
+            <p className="text-center dark:text-black py-3">
               Don't have an account?
               <Link to="/register" className="text-red-500">
                 {" "}

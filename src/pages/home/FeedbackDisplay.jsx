@@ -52,14 +52,14 @@ const FeedbackDisplay = () => {
                     className="w-12 h-12 rounded-full mr-4 "
                   />
                   <div>
-                    <h3 className="font-bold text-black  text-xl ">{feedback.name}</h3>
-                    <p className="text-gray-700 text-sm ">{feedback.email}</p>
+                    <h3 className="font-bold text-black dark:text-white  text-xl ">{feedback.name}</h3>
+                    <p className="text-gray-700 text-sm dark:text-white ">{feedback.email}</p>
                   </div>
                 </div>
                 {/* Display the feedback text */}
                 <div className="px-10">
-                <p className="text-gray-700 text-center ">{feedback.feedback}</p>
-                <p className="text-gray-500  mt-2 text-center">
+                <p className="text-gray-700 dark:text-white text-center ">{feedback.feedback}</p>
+                <p className="text-gray-500  dark:text-white mt-2 text-center">
                   {new Date(feedback.createdAt).toLocaleDateString()}
                 </p>
                 </div>

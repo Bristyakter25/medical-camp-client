@@ -78,7 +78,7 @@ const Register = () => {
   };
 
   return (
-    <div className=" bg-slate-300 min-h-screen ">
+    <div className=" bg-slate-300 pt-20 min-h-screen ">
       <h1 className="text-5xl text-center font-bold py-5">Register now!</h1>
       <div className="flex items-center justify-center gap-x-2 my-5">
         <p className="text-center hover:text-blue-500">
@@ -105,7 +105,7 @@ const Register = () => {
                   type="text"
                   placeholder="name"
                   {...register("name", { required: true })}
-                  className="input input-bordered"
+                  className="input dark:text-black input-bordered"
                   name="name"
                 />
                 {errors.name && <span>This field is required</span>}
@@ -118,7 +118,7 @@ const Register = () => {
                   type="email"
                   placeholder="email"
                   {...register("email", { required: true })}
-                  className="input input-bordered"
+                  className="input dark:text-black input-bordered"
                   name="email"
                   required
                 />
@@ -131,7 +131,7 @@ const Register = () => {
                   type="url"
                   placeholder="photoURL"
                   {...register("photoURL")}
-                  className="input input-bordered"
+                  className="input dark:text-black input-bordered"
                   name="photoURL"
                 />
               </div>
@@ -143,7 +143,7 @@ const Register = () => {
                   type="password"
                   placeholder="password"
                   {...register("password", { required: true })}
-                  className="input input-bordered"
+                  className="input dark:text-black input-bordered"
                   name="password"
                   required
                 />
@@ -154,7 +154,7 @@ const Register = () => {
             </form>
             <div className="divider">OR</div>
             <Social></Social>
-            <p className="text-center py-3 ">
+            <p className="text-center dark:text-black py-3 ">
               Already have an account?
               <Link to="/login" className="text-red-500">
                 {" "}

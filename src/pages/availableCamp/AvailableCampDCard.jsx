@@ -68,24 +68,24 @@ const AvailableCampDCard = ({detail}) => {
        
         <form onSubmit={handleSubmit(onSubmit)}>
                             <h2>Join Camp</h2>
-                            <input type="text" value={name} readOnly className="input" />
-                            <input type="number" value={fees} readOnly className="input" />
-                            <input type="text" value={location} readOnly className="input" />
-                            <input type="text" value={healthcareName} readOnly className="input" />
-                            <input type="text" value={user?.displayName} readOnly className="input" />
-                            <input type="email" value={user?.email} readOnly className="input" />
-                            <input type="number" placeholder="Age" {...register("age", { required: "Age is required" })} className="input" />
+                            <input type="text" value={name} readOnly className="input dark:text-black" />
+                            <input type="number" value={fees} readOnly className="input dark:text-black" />
+                            <input type="text" value={location} readOnly className="input dark:text-black" />
+                            <input type="text" value={healthcareName} readOnly className="input dark:text-black" />
+                            <input type="text" value={user?.displayName} readOnly className="input dark:text-black" />
+                            <input type="email" value={user?.email} readOnly className="input dark:text-black" />
+                            <input type="number" placeholder="Age" {...register("age", { required: "Age is required" })} className="input dark:text-black" />
                             
-                            <input type="tel" placeholder="Phone Number" {...register("phone", { required: "Phone is required" })} className="input" />
+                            <input type="tel" placeholder="Phone Number" {...register("phone", { required: "Phone is required" })} className="input dark:text-black" />
                             
-                            <select {...register("gender", { required: "Gender is required" })} className="input">
+                            <select {...register("gender", { required: "Gender is required" })} className="input dark:text-black">
                                 <option value="">Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
                             </select>
                             
-                            <input type="text" placeholder="Emergency Contact" {...register("emergencyContact", { required: "Emergency contact is required" })} className="input" />
+                            <input type="text" placeholder="Emergency Contact" {...register("emergencyContact", { required: "Emergency contact is required" })} className="input dark:text-black" />
                             
                             <button type="submit" className="btn btn-primary">Join Camp</button>
                         </form>
