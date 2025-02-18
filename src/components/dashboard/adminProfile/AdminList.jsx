@@ -88,7 +88,7 @@ const AdminList = () => {
         {isEditing && (
           <form onSubmit={handleSubmit} className="w-full max-w-sm">
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Name</label>
+              <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="name">Name</label>
               <input 
                 type="text" 
                 name="name" 
@@ -98,7 +98,7 @@ const AdminList = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
+              <label className="block dark:text-white text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
               <input 
                 type="email" 
                 name="email" 
@@ -108,7 +108,7 @@ const AdminList = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="photoURL">Photo URL</label>
+              <label className="block dark:text-white text-gray-700 text-sm font-bold mb-2" htmlFor="photoURL">Photo URL</label>
               <input 
                 type="text" 
                 name="photoURL" 
