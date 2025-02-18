@@ -30,28 +30,32 @@ const PaymentHistory = () => {
   }, [user?.email, axiosSecure]);
 
   return (
-    <div>
-      <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold ">Payment History</h2>
-      <table className="min-w-full bg-white border-collapse border border-gray-200">
-        <thead>
-          <tr>
-            <th className="px-4 py-2 border border-gray-200">Date</th>
-            <th className="px-4 py-2 border border-gray-200">Amount</th>
-            <th className="px-4 py-2 border border-gray-200">Transaction ID</th>
-            <th className="px-4 py-2 border border-gray-200">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {paymentHistory.map((payment) => (
-            <tr key={payment.transactionId}>
-              <td className="px-4 py-2 border border-gray-200">{new Date(payment.date).toLocaleDateString()}</td>
-              <td className="px-4 py-2 border border-gray-200">${payment.price}</td>
-              <td className="px-4 py-2 border border-gray-200">{payment.transactionId}</td>
-              <td className="px-4 py-2 border border-gray-200">{payment.status}</td>
+    <div className="w-full">
+      <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">Payment History</h2>
+      
+      
+      <div className="w-full max-w-full overflow-x-auto">
+        <table className="w-full min-w-max bg-white dark:bg-[#09122C] border-collapse border border-gray-200">
+          <thead>
+            <tr>
+              <th className="px-4 py-2 border border-gray-200">Date</th>
+              <th className="px-4 py-2 border border-gray-200">Amount</th>
+              <th className="px-4 py-2 border border-gray-200">Transaction ID</th>
+              <th className="px-4 py-2 border border-gray-200">Status</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {paymentHistory.map((payment) => (
+              <tr key={payment.transactionId}>
+                <td className="px-4 py-2 border border-gray-200">{new Date(payment.date).toLocaleDateString()}</td>
+                <td className="px-4 py-2 border border-gray-200">${payment.price}</td>
+                <td className="px-4 py-2 border border-gray-200">{payment.transactionId}</td>
+                <td className="px-4 py-2 border border-gray-200">{payment.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

@@ -54,8 +54,8 @@ const CampDetailsCard = ({ detail}) => {
             .catch((error) => console.error("Error joining camp:", error));
     };
   return (
-    <div className="my-5">
-      <img className="w-full h-[400px] rounded-2xl" src={image} alt="" />
+    <div className="pt-20">
+      <img className="w-full lg:h-[400px] h-[250px] rounded-2xl" src={image} alt="" />
       <h2 className="text-black dark:text-white font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
       <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Camp Fees:</span> {fees}</p>
       <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Date:</span> {date}</p>

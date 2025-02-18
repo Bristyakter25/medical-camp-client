@@ -20,10 +20,10 @@ const AvailableCampCard = ({availableCamp}) => {
     }, [_id]);
 
     return (
-        <div className='lg:w-[330px] w-[170px]   mx-auto my-5'>
-           <img className='lg:w-full w-[360px] h-[250px] mx-auto rounded-2xl' src={image} alt="" /> 
+        <div className='w-[330px]  mx-auto my-5'>
+           <img className='w-full  h-[250px] mx-auto rounded-2xl' src={image} alt="" /> 
            <h2 className="text-black dark:text-white font-semibold lg:h-[60px]  lg:text-xl text-center mt-5">{name}</h2>
-           <div className='lg:h-[300px] my-4 h-[400px]'>
+           <div className='h-[300px] my-4 '>
            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Date:</span>{date}</p>
            <p className="mb-2"><span className="text-black dark:text-white font-semibold ">Location:</span>{location}</p>
            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Healthcare Professional:</span>{healthcareName}</p>

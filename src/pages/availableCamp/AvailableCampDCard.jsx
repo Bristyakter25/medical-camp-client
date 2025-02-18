@@ -46,7 +46,7 @@ const AvailableCampDCard = ({detail}) => {
                   .catch((error) => console.error("Error joining camp:", error));
           };
     return (
-        <div className="lg:w-[900px] w-[380px] mx-auto my-5">
+        <div className="lg:w-[900px] w-[330px] mx-auto my-5">
            
       <img className="w-full h-[450px] rounded-2xl" src={image} alt="" />
       <h2 className="text-black dark:text-white font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>

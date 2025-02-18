@@ -27,7 +27,7 @@ const FeedbackDisplay = () => {
   }, [axiosSecure]);
 
   return (
-    <div className="container mx-auto my-10 ">
+    <div className="container mx-auto mt-28 ">
       <h2 className="text-center text-3xl mt-16 mb-10 text-[#A294F9] font-bold">
         Our Clients Feedback
       </h2>

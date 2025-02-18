@@ -15,29 +15,26 @@ const Navbar = () => {
   };
 
   const NavLinks = () => (
-    <>
-      <div className="gap-x-5 flex ">
-        <NavLink to="/" className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">Home</NavLink>
-        <NavLink to="/availableCamps" className="text-xl hover:text-blue-500 text-[#4635B1] font-semibold">Available Camps</NavLink>
-      </div>
-    </>
+    <div className="lg:flex ">
+      <li><NavLink to="/" className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">Home</NavLink></li>
+      <li><NavLink to="/availableCamps" className="text-xl hover:text-blue-500 text-[#4635B1] font-semibold">Available Camps</NavLink></li>
+      <li><NavLink to='/upcomingEvents' className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">UpComing Event</NavLink></li>
+      <li><NavLink to='/aboutUs' className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">About Us</NavLink></li>
+    </div>
   );
 
-  
   const isDashboardPage = location.pathname.startsWith("/dashboard");
   const isLoginPage = location.pathname === "/login" || location.pathname === "/register";
 
-  
   if (isDashboardPage) {
     return null;
   }
-  
 
   return (
-    <div className='  bg-[#F5EFFF] w-full dark:bg-[#A294F9] fixed top-0 z-10'>
-      <div className="navbar  max-w-[1000px] mx-auto px-4">
-       
-        <div className="navbar-start">
+    <div className='bg-[#F5EFFF] w-full dark:bg-[#A294F9] fixed top-0 z-10'>
+      <div className="navbar max-w-[1000px] mx-auto px-4">
+        {/* Left Side (Logo) */}
+        <div className="navbar-start flex items-center">
           <div className="dropdown lg:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost">
               <svg
@@ -50,7 +47,7 @@ const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1]  mt-3 w-52 p-2 shadow">
               <NavLinks />
             </ul>
           </div>

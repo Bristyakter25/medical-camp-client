@@ -31,14 +31,14 @@ const FAQ = () => {
   };
 
   return (
-    <div className="  mb-10 rounded-lg shadow-md">
-      <h2 className="text-center w-full mt-16 text-3xl text-[#A294F9] font-bold mb-10">Frequently Asked Questions</h2>
-      <div className="faq-list space-y-4">
+    <div className=" mt-28   rounded-lg shadow-md">
+      <h2 className="text-center  text-3xl text-[#A294F9] font-bold mb-5">Frequently Asked Questions</h2>
+      <div className="faq-list p-5 space-y-4">
         {faqData.map((faq, index) => (
           <div key={index} className="faq-item">
             <button
               onClick={() => toggleAnswer(index)}
-              className="faq-question w-full text-left text-lg font-semibold text-blue-600 hover:text-blue-800"
+              className="faq-question w-full text-center text-lg font-semibold text-blue-600 hover:text-blue-800"
             >
               {faq.question}
             </button>

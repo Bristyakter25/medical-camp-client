@@ -18,7 +18,7 @@ const Home = () => {
 
         
        
-        <div className='lg:w-3/5 mx-auto'>
+        <div >
         <Banner ></Banner>
         <PopularCamps></PopularCamps>
         <FeedbackDisplay></FeedbackDisplay>

@@ -66,7 +66,7 @@ const UpdateCamp = () => {
                                     type="text"
                                     placeholder="Camp name"
                                     {...register("name", { required: true })}
-                                    className="input input-bordered w-full"
+                                    className="input dark:text-black input-bordered w-full"
                                     name="name"
                                     defaultValue={name}
                                     required
@@ -82,7 +82,7 @@ const UpdateCamp = () => {
                                     type="date"
                                     placeholder="Date"
                                     {...register("date", { required: true })}
-                                    className="input input-bordered w-full"
+                                    className="input dark:text-black input-bordered w-full"
                                     defaultValue={date}
                                     required
                                 />
@@ -96,7 +96,7 @@ const UpdateCamp = () => {
                                     type="text"
                                     placeholder="Location"
                                     {...register("location", { required: true })}
-                                    className="input input-bordered w-full"
+                                    className="input dark:text-black input-bordered w-full"
                                     defaultValue={location}
                                     required
                                 />
@@ -110,7 +110,7 @@ const UpdateCamp = () => {
                                     type="text"
                                     placeholder="Healthcare Professional Name"
                                     {...register("healthcareName", { required: true })}
-                                    className="input input-bordered w-full"
+                                    className="input dark:text-black input-bordered w-full"
                                     defaultValue={healthcareName}
                                     required
                                 />

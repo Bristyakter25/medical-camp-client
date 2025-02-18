@@ -42,11 +42,12 @@ const ChartForShow = () => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-center text-3xl font-bold text-[#6A5ACD] mb-6">Camp Fees Distribution</h2>
-      <div className="flex justify-center">
+      <h2 className="text-center text-xl lg:text-3xl font-bold text-[#6A5ACD] mb-6">Camp Fees Distribution</h2>
+      <div className="lg:flex  justify-center">
         <ResponsiveContainer width="90%" height={400}>
-          <PieChart>
+          <PieChart >
             <Pie
+            
               data={campData}
               cx="50%"
               cy="50%"

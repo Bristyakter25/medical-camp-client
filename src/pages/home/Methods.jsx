@@ -15,7 +15,7 @@ const Methods = () => {
   ];
 
   return (
-    <div className="lg:w-full w-[320px] mx-auto my-16">
+    <div className="lg:w-full mt-20 w-[320px] mx-auto my-16">
       <h2 className="text-center w-full mt-16 text-3xl text-[#A294F9] font-bold mb-10">
         Our Methods In Healing
       </h2>

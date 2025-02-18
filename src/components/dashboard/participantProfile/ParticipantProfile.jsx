@@ -113,11 +113,11 @@ const ParticipantProfile = () => {
             />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{participant.participantName}</div>
-              <p className="text-black">Email: {participant.participantEmail}</p>
-              <p className="text-black">
+              <p className="text-black dark:text-white">Email: {participant.participantEmail}</p>
+              <p className="text-black dark:text-white">
                 Contact No: {participant.phone }
               </p>
-              <p className="text-black">Age: {participant.age}</p>
+              <p className="text-black dark:text-white">Age: {participant.age}</p>
               <button
                 className="btn bg-[#C5BAFF] my-5 glass text-violet-500 w-full"
                 onClick={() => setIsEditing(true)}

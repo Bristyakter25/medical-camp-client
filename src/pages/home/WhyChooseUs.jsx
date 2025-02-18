@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhyChooseUs = () => {
   return (
-    <div className="why-choose-us mt-14  rounded-lg shadow-lg">
+    <div className="why-choose-us mt-28 mb-10  rounded-lg shadow-lg">
       <h2 className="text-center w-full text-3xl text-[#A294F9] font-bold mb-10">Why Choose Us?</h2>
       <div className="reasons space-y-6">
         <div className="reason p-6 bg-white dark:bg-[#000957]  rounded-lg shadow-sm">

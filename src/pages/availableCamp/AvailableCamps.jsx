@@ -61,7 +61,7 @@ const AvailableCamps = () => {
         Available Camps
       </h2>
 
-      <div className="lg:w-[1024px] mx-auto w-[380px] mb-5">
+      <div className="lg:w-[1024px] mx-auto w-[320px] mb-5">
        
         <input
           type="text"
@@ -84,26 +84,25 @@ const AvailableCamps = () => {
         </select>
 
        
-        <button
+        {/* <button
           onClick={toggleLayout}
           className="btn w-full bg-[#C5BAFF] glass text-violet-500"
         >
           Switch to {isTwoColumnLayout ? "Three" : "Two"} Column Layout
-        </button>
+        </button> */}
       </div>
 
       <div
-        className={`grid ${
-          isTwoColumnLayout ? "grid-cols-2" : "grid-cols-3"
-        } gap-6 lg:w-[1024px] mx-auto w-[380px]`}
-      >
-        {filteredCamps.map((availableCamp) => (
-          <AvailableCampCard
-            key={availableCamp._id}
-            availableCamp={availableCamp}
-          ></AvailableCampCard>
-        ))}
-      </div>
+  className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-[1024px] mx-auto w-[380px]`}
+>
+  {filteredCamps.map((availableCamp) => (
+    <AvailableCampCard
+      key={availableCamp._id}
+      availableCamp={availableCamp}
+    ></AvailableCampCard>
+  ))}
+</div>
+
     </div>
   );
 };

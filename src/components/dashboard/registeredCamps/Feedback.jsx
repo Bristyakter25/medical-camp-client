@@ -52,8 +52,8 @@ const Feedback = () => {
   };
 
   return (
-    <div className="container mx-auto">
-      <h2 className="text-center text-3xl mt-8 mb-4 font-bold">Feedback</h2>
+    <div className="container mt-28 mx-auto">
+      <h2 className="text-center text-3xl font-bold">Feedback</h2>
       <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="feedback">Your Feedback</label>

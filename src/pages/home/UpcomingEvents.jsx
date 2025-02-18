@@ -33,9 +33,9 @@ const UpcomingEvents = () => {
   ];
 
   return (
-    <div className="upcoming-events  rounded-lg shadow-xl">
-      <h2 className="text-center w-full mt-5 text-3xl text-[#A294F9] font-bold mb-10">Upcoming Events</h2>
-      <div className="event-list space-y-6">
+    <div className=" mb-10 mx-auto rounded-lg shadow-xl">
+      <h2 className="text-center pt-24  w-full mb-5 text-3xl text-[#A294F9] font-bold">Upcoming Events</h2>
+      <div className=" mx-auto  space-y-5 mb-5">
         {events.map((event, index) => (
           <div key={index} className="event p-6 bg-white dark:bg-[#000957] rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
             <div className="event-header flex justify-between items-center mb-4">

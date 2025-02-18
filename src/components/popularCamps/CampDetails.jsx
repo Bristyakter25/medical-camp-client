@@ -32,7 +32,7 @@ const CampDetails = () => {
         <div>
             <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold ">Camp Details </h2>
 
-            <div className="lg:w-[900px] mx-auto w-[380px]">
+            <div className="lg:w-[900px] mx-auto w-[330px]">
         <CampDetailsCard detail={details}></CampDetailsCard>
         </div>
             

@@ -23,6 +23,8 @@ import ManageRegisteredCamps from "../components/dashboard/manageRegisteredCamps
 import AdminList from "../components/dashboard/adminProfile/AdminList";
 import Feedback from "../components/dashboard/registeredCamps/Feedback";
 import ChartForShow from "../components/dashboard/ChartForAll/ChartForShow";
+import UpcomingEvents from "../pages/home/UpcomingEvents";
+import AboutUs from "../pages/home/AboutUs";
 
 
 export const router = createBrowserRouter([
@@ -55,6 +57,14 @@ export const router = createBrowserRouter([
         {
           path:'addCamp/:id',
           element:<AvailableCampDetails></AvailableCampDetails>
+        },
+        {
+          path:'upcomingEvents',
+          element:<UpcomingEvents></UpcomingEvents>
+        },
+        {
+          path:'aboutUs',
+          element:<AboutUs></AboutUs>
         },
         
         {
