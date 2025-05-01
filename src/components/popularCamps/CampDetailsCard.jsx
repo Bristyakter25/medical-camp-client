@@ -54,8 +54,8 @@ const CampDetailsCard = ({ detail}) => {
             .catch((error) => console.error("Error joining camp:", error));
     };
   return (
-    <div className="pt-20">
-      <img className="w-full lg:h-[400px] h-[250px] rounded-2xl" src={image} alt="" />
+    <div className="pt-7 mb-10">
+      <img className="w-full lg:h-[500px] h-[250px] rounded-2xl" src={image} alt="" />
       <h2 className="text-black dark:text-white font-semibold h-[50px] text-xl text-center mt-5">{name}</h2>
       <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Camp Fees:</span> {fees}</p>
       <p className="mb-2"><span className="text-black font-semibold dark:text-white "> Date:</span> {date}</p>
@@ -65,7 +65,7 @@ const CampDetailsCard = ({ detail}) => {
       <p lassName="mb-2"><span className="text-black font-semibold dark:text-white"> Participants:</span>{participantCount}</p>
       
       <button
-        className="btn w-full bg-[#C5BAFF] my-5 glass text-violet-500"
+        className="btn w-full hover:bg-purple-500 hover:text-white dark:hover:bg-purple-500 dark:hover:text-white dark:text-purple-700 bg-[#C5BAFF] my-5 glass text-violet-500"
         onClick={() => document.getElementById("my_modal_5").showModal()}
       >
         Join Camp
