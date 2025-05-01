@@ -15,11 +15,11 @@ const Methods = () => {
   ];
 
   return (
-    <div className="lg:w-full mt-20 w-[320px] mx-auto my-16">
-      <h2 className="text-center w-full mt-16 text-3xl text-[#A294F9] font-bold mb-10">
+    <div className="lg:w-full mt-20 mb-10 w-[320px] mx-auto ">
+      <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold ">
         Our Methods In Healing
       </h2>
-      <p className="text-black dark:text-white font-semibold text-center text-xl mb-10">
+      <p className="text-black dark:text-white font-semibold text-center text-xl mb-20">
         Empowering lives with innovative healing techniques, where care meets precision and results
         speak for themselves.
       </p>

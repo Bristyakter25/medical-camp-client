@@ -1,18 +1,36 @@
 import React from 'react';
-import campImage from "../../assets/camp images/senior-woman-with-walking-frame-hospital-waiting-room-rehabilitation-treatment.jpg"
-const AboutUs = () => {
+import campImage from "../../assets/camp images/senior-woman-with-walking-frame-hospital-waiting-room-rehabilitation-treatment.jpg";
+
+const AboutUs = ({ isFullPage = false }) => {
     return (
-        <div className='mb-10 w-full mx-auto'>
-            <h2 className="text-center pt-24  w-full mb-10 text-3xl text-[#A294F9] font-bold">About Us</h2>
-            <div className='lg:flex  mx-auto   gap-x-6 '>
-            <img className='lg:w-[500px] w-[300px] rounded-lg ' src={campImage} alt="" />
-            <div className='text-gray-600 flex items-center mt-8 lg:mt-0 dark:text-white'>
-<p>At CareSphere, our mission is to provide accessible healthcare services to individuals in need. We offer a range of free and low-cost medical treatments, consultations, and preventive care. Our dedicated team of healthcare professionals and volunteers are committed to improving the health and well-being of the community by delivering quality care in a compassionate and welcoming environment. Whether it's routine check-ups, emergency care, or health education, we aim to make healthcare more inclusive for everyone.</p>
+        <div className={`w-full max-w-7xl mx-auto px-4 mt-28 ${isFullPage ? "min-h-screen  items-center" : ""}`}>
+            <h2 className="text-center mb-4 text-4xl font-bold text-[#A294F9]">About Us</h2>
+            <p className="text-center text-gray-600 dark:text-gray-300 text-lg mb-10">
+                Empowering Communities with Accessible Healthcare
+            </p>
+
+            <div className="lg:flex items-center gap-10">
+                <img
+                    className="lg:w-[500px] w-full rounded-lg shadow-md"
+                    src={campImage}
+                    alt="Healthcare mission"
+                />
+                <div className="text-gray-700 dark:text-gray-200 mt-8 lg:mt-0 space-y-5">
+                    <p>
+                        At <span className="font-semibold text-[#A294F9]">CareSphere</span>, we believe everyone deserves access to essential medical services.
+                    </p>
+                    <p>
+                        We provide a range of services including free and low-cost treatments, health screenings, and education.
+                    </p>
+                    <p>
+                        From check-ups to emergency care, we support underserved communities and promote healthier lives.
+                    </p>
+                    
+                </div>
             </div>
-            </div>
-            
         </div>
     );
 };
+
 
 export default AboutUs;

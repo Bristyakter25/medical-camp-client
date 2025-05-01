@@ -64,7 +64,8 @@ export const router = createBrowserRouter([
         },
         {
           path:'aboutUs',
-          element:<AboutUs>m</AboutUs>
+          element:<AboutUs isFullPage={true} />
+
         },
         
         {

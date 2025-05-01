@@ -15,9 +15,6 @@ const Home = () => {
     return (
      
         
-
-        
-       
         <div >
         <Banner ></Banner>
         <PopularCamps></PopularCamps>

@@ -33,19 +33,22 @@ const UpcomingEvents = () => {
   ];
 
   return (
-    <div className=" mb-10 mx-auto rounded-lg shadow-xl">
-      <h2 className="text-center pt-24  w-full mb-5 text-3xl text-[#A294F9] font-bold">Upcoming Events</h2>
-      <div className=" mx-auto  space-y-5 mb-5">
+    <div className="mb-10 mx-auto px-4 max-w-6xl">
+      <h2 className="text-center pt-24 w-full mb-10 text-3xl text-[#A294F9] font-bold">Upcoming Events</h2>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         {events.map((event, index) => (
-          <div key={index} className="event p-6 bg-white dark:bg-[#000957] rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-            <div className="event-header flex justify-between items-center mb-4">
-              <h3 className="text-2xl font-semibold dark:text-white text-gray-800">{event.title}</h3>
+          <div
+            key={index}
+            className="p-6 bg-white dark:bg-[#000957] rounded-xl border border-transparent hover:border-[#A294F9] shadow-md hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
+          >
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-semibold dark:text-white text-gray-800">{event.title}</h3>
               <span className="text-sm text-[#AA60C8]">{event.date}</span>
             </div>
-            <p className="text-gray-600 dark:text-gray-300">{event.description}</p>
-            <div className="event-details mt-4 flex justify-between items-center">
-              <span className="text-sm text-gray-500">{event.time}</span>
-              <span className="text-sm text-gray-500">{event.location}</span>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">{event.description}</p>
+            <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+              <span>{event.time}</span>
+              <span>{event.location}</span>
             </div>
           </div>
         ))}

@@ -57,7 +57,7 @@ const AvailableCamps = () => {
 
   return (
     <div >
-      <h2 className="text-center pt-24  w-full mb-5 text-3xl text-[#A294F9] font-bold">
+      <h2 className="text-center  pt-24  w-full mb-5 text-3xl text-[#A294F9] font-bold">
         Available Camps
       </h2>
 
