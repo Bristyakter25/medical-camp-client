@@ -39,7 +39,7 @@ const UpcomingEvents = () => {
         {events.map((event, index) => (
           <div
             key={index}
-            className="p-6 bg-white dark:bg-[#000957] rounded-xl border border-transparent hover:border-[#A294F9] shadow-md hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
+            className="p-6 bg-white dark:bg-[#00072D] rounded-xl border border-transparent hover:border-[#A294F9] shadow-md hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
           >
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-xl font-semibold dark:text-white text-gray-800">{event.title}</h3>

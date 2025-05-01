@@ -16,10 +16,10 @@ const Navbar = () => {
 
   const NavLinks = () => (
     <div className="lg:flex ">
-      <li><NavLink to="/" className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">Home</NavLink></li>
-      <li><NavLink to="/availableCamps" className="text-xl hover:text-blue-500 text-[#4635B1] font-semibold">Available Camps</NavLink></li>
-      <li><NavLink to='/upcomingEvents' className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">UpComing Event</NavLink></li>
-      <li><NavLink to='/aboutUs' className="text-xl text-[#4635B1] hover:text-blue-500 font-semibold">About Us</NavLink></li>
+      <li><NavLink to="/" className="text-xl dark:hover:text-blue-500 dark:text-[#FDF4F5] text-[#4635B1] hover:text-blue-500 font-semibold">Home</NavLink></li>
+      <li><NavLink to="/availableCamps" className="text-xl hover:text-blue-500 text-[#4635B1] dark:text-[#FDF4F5] dark:hover:text-blue-500 font-semibold">Available Camps</NavLink></li>
+      <li><NavLink to='/upcomingEvents' className="text-xl text-[#4635B1] hover:text-blue-500 dark:text-[#FDF4F5] dark:hover:text-blue-500 font-semibold">UpComing Event</NavLink></li>
+      <li><NavLink to='/aboutUs' className="text-xl text-[#4635B1] hover:text-blue-500 dark:text-[#FDF4F5] dark:hover:text-blue-500 font-semibold">About Us</NavLink></li>
     </div>
   );
 
@@ -31,7 +31,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-[#F5EFFF] w-full dark:bg-[#A294F9] fixed top-0 z-10'>
+    <div className='bg-[#F5EFFF] w-full dark:bg-[#00072D] fixed top-0 z-10'>
       <div className="navbar max-w-[1000px] mx-auto px-4">
         {/* Left Side (Logo) */}
         <div className="navbar-start flex items-center">
@@ -64,7 +64,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Right Side (Dark Mode + User Profile / Join Us) */}
+       
         <div className="navbar-end flex gap-4">
           <DarkModeToggle /> {/* Dark Mode Button */}
           {user ? <UserProfile user={user} handleLogOut={handleLogOut} /> : <Link to="/login" className="btn">Join Us</Link>}
@@ -76,11 +76,11 @@ const Navbar = () => {
 
 // Separate User Profile Component
 const UserProfile = ({ user, handleLogOut }) => (
-  <div className="dropdown dark:text-black dropdown-end">
-    <div tabIndex={0} role="button" className="m-1 flex items-center cursor-pointer">
+  <div className="dropdown dark:text-white   text-black dropdown-end">
+    <div tabIndex={0} role="button" className="m-1  flex items-center cursor-pointer">
       <img src={user.photoURL} alt="User Profile" className="w-8 h-8 rounded-full" />
     </div>
-    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+    <ul tabIndex={0} className="dropdown-content bg-white dark:bg-[#00072D] menu  rounded-box z-[1] w-52 p-2 shadow">
       <li className="text-center my-3 font-semibold">{user.displayName}</li>
       <li>
         <button onClick={handleLogOut} className="btn w-full">Log Out</button>

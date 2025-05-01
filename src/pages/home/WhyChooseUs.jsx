@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
         ].map((item, idx) => (
           <div
             key={idx}
-            className="p-6 mb-6 bg-white dark:bg-[#000957] rounded-xl shadow-md border border-transparent hover:border-[#A294F9] hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out"
+            className="p-6 mb-6 bg-white dark:bg-[#00072D] rounded-xl shadow-md border border-transparent hover:border-[#A294F9] hover:shadow-2xl transform hover:scale-[1.02] transition duration-300 ease-in-out"
           >
             <h3 className="text-xl font-semibold dark:text-white text-gray-800">{item.title}</h3>
             <p className="text-gray-600 dark:text-[#FDF4F5] mt-2">{item.description}</p>
