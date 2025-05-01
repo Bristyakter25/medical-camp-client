@@ -31,7 +31,7 @@ const AddCamp = () => {
       <h1 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">Add a Camp!</h1>
       <div className="hero w-full">
         <div className="hero-content flex-col w-full">
-          <div className="bg-base-100 w-full max-w-4xl shadow-2xl p-6">
+          <div className="bg-white 	dark:bg-[#0D1117] w-full max-w-4xl shadow-2xl p-6">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -41,7 +41,7 @@ const AddCamp = () => {
                   type="text"
                   placeholder="camp name"
                   {...register("name", { required: true })}
-                  className="input dark:text-black input-bordered w-full"
+                  className="input dark:text-white 	dark:bg-[#0D1117] bg-white input-bordered w-full"
                   name="name"
                   required
                 />
@@ -55,7 +55,7 @@ const AddCamp = () => {
                   type="url"
                   placeholder="image"
                   {...register("image", { required: true })}
-                  className="input dark:text-black input-bordered w-full"
+                  className="input dark:text-white 	dark:bg-[#0D1117] bg-white  input-bordered w-full"
                   required
                 />
               </div>
@@ -67,7 +67,7 @@ const AddCamp = () => {
                   type="number"
                   placeholder="camp fees"
                   {...register("fees", { required: true })}
-                  className="input dark:text-black input-bordered w-full"
+                  className="input dark:text-white 	dark:bg-[#0D1117] bg-white  input-bordered w-full"
                   required
                 />
                 {errors.fees && <span>This field is required</span>}
@@ -80,7 +80,7 @@ const AddCamp = () => {
                   type="date"
                   placeholder="date"
                   {...register("date", { required: true })}
-                  className="input dark:text-black input-bordered w-full"
+                  className="input 	dark:bg-[#0D1117] bg-white  dark:text-white input-bordered w-full"
                   required
                 />
               </div>
@@ -92,7 +92,7 @@ const AddCamp = () => {
                   type="text"
                   placeholder="location"
                   {...register("location", { required: true })}
-                  className="input dark:text-black input-bordered w-full"
+                  className="input 	dark:bg-[#0D1117] bg-white  dark:text-white input-bordered w-full"
                   required
                 />
               </div>
@@ -104,7 +104,7 @@ const AddCamp = () => {
                   type="text"
                   placeholder="Healthcare Professional Name"
                   {...register("healthcareName", { required: true })}
-                  className="input dark:text-black input-bordered w-full"
+                  className="input 	dark:bg-[#0D1117] bg-white  dark:text-white input-bordered w-full"
                   required
                 />
               </div>
@@ -117,7 +117,7 @@ const AddCamp = () => {
                   type="text"
                   placeholder="Description"
                   {...register("description", { required: true })}
-                  className="input dark:text-black input-bordered w-full"
+                  className="input 	dark:bg-[#0D1117] bg-white  dark:text-white input-bordered w-full"
                   required
                 />
               </div>

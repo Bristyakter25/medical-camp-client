@@ -24,7 +24,7 @@ const DashBoard = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed lg:relative top-0 left-0 h-[1000px] lg:w-72 w-[200px] bg-[#F5EFFF] dark:bg-[#000957] p-5 transition-transform duration-300 ${
+        className={`fixed lg:relative top-0 left-0 h-[1000px] lg:w-72 w-[200px] bg-[#F5EFFF] dark:bg-[#00072D] p-5 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0`}
       >
@@ -50,13 +50,15 @@ const DashBoard = () => {
         <div className="divider"></div>
 
         {/* Participants Dashboard */}
-        <ul className="menu">
-          <h2 className="text-center my-5 font-bold text-xl dark:text-[#A294F9] text-[#4635B1]">Participants Dashboard</h2>
-          <li><NavLink to='/dashboard/campChart'><TbBrandGoogleAnalytics /> Analytics</NavLink></li>
-          <li><NavLink to='/dashboard/participantProfile'><FaUserTie /> Participant Profile</NavLink></li>
-          <li><NavLink to='/dashboard/registeredCamps'><FaRegAddressBook /> Registered Camps</NavLink></li>
-          <li><NavLink to='/dashboard/payments'><FaMoneyCheckAlt /> Payment History</NavLink></li>
-        </ul>
+        {!isAdmin && (
+  <ul className="menu">
+    <h2 className="text-center my-5 font-bold text-xl dark:text-[#A294F9] text-[#4635B1]">Participants Dashboard</h2>
+    <li><NavLink to='/dashboard/campChart'><TbBrandGoogleAnalytics /> Analytics</NavLink></li>
+    <li><NavLink to='/dashboard/participantProfile'><FaUserTie /> Participant Profile</NavLink></li>
+    <li><NavLink to='/dashboard/registeredCamps'><FaRegAddressBook /> Registered Camps</NavLink></li>
+    <li><NavLink to='/dashboard/payments'><FaMoneyCheckAlt /> Payment History</NavLink></li>
+  </ul>
+)}
       </div>
 
       {/* Main Content */}
