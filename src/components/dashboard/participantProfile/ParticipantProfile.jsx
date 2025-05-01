@@ -7,18 +7,16 @@ import { InfinitySpin } from "react-loader-spinner";
 const ParticipantProfile = () => {
   const [participant, setParticipant] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const axiosSecure = UseAxiosSecure();
-  const { user } = useContext(AuthContext); 
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchParticipant = async () => {
       try {
-        
         const response = await axiosSecure.get("/participants");
         const participants = response.data;
 
-        
         const loggedInParticipant = participants.find(
           (p) => p.participantEmail === user?.email
         );
@@ -42,14 +40,14 @@ const ParticipantProfile = () => {
           confirmButtonText: "OK",
         });
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
     if (user?.email) {
       fetchParticipant();
     } else {
-      setLoading(false); 
+      setLoading(false);
     }
   }, [axiosSecure, user?.email]);
 
@@ -84,18 +82,20 @@ const ParticipantProfile = () => {
   };
 
   if (loading) {
-    return <div className="flex items-center justify-center min-h-screen">
-            <InfinitySpin
-              visible={true}
-              width="200"
-              color="#4fa94d"
-              ariaLabel="infinity-spin-loading"
-            />
-          </div>; 
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <InfinitySpin
+          visible={true}
+          width="200"
+          color="#4fa94d"
+          ariaLabel="infinity-spin-loading"
+        />
+      </div>
+    );
   }
 
   if (!participant) {
-    return <div>No participant data available.</div>; // Fallback message
+    return <div>No participant data available.</div>;
   }
 
   return (
@@ -112,10 +112,14 @@ const ParticipantProfile = () => {
               alt={participant.name || "Profile"}
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{participant.participantName}</div>
-              <p className="text-black dark:text-white">Email: {participant.participantEmail}</p>
+              <div className="font-bold text-xl mb-2">
+                {participant.participantName}
+              </div>
               <p className="text-black dark:text-white">
-                Contact No: {participant.phone }
+                Email: {participant.participantEmail}
+              </p>
+              <p className="text-black dark:text-white">
+                Contact No: {participant.phone}
               </p>
               <p className="text-black dark:text-white">Age: {participant.age}</p>
               <button
@@ -134,10 +138,10 @@ const ParticipantProfile = () => {
               </label>
               <input
                 type="text"
-                name="name"
+                name="participantName"
                 value={participant.participantName || ""}
                 onChange={handleChange}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow bg-white dark:bg-gray-800 dark:text-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <div className="mb-4">
@@ -148,8 +152,8 @@ const ParticipantProfile = () => {
                 type="email"
                 name="participantEmail"
                 value={participant.participantEmail || ""}
-                readOnly
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                onChange={handleChange}
+                className="shadow bg-white dark:bg-gray-800 dark:text-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <div className="mb-4">
@@ -161,7 +165,7 @@ const ParticipantProfile = () => {
                 name="image"
                 value={user.photoURL || ""}
                 onChange={handleChange}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow bg-white dark:bg-gray-800 dark:text-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <div className="mb-4">
@@ -170,10 +174,10 @@ const ParticipantProfile = () => {
               </label>
               <input
                 type="text"
-                name="contact"
+                name="phone"
                 value={participant.phone || ""}
                 onChange={handleChange}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow bg-white dark:bg-gray-800 dark:text-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <button

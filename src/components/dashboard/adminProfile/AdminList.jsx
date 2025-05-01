@@ -81,12 +81,12 @@ const AdminList = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto dark:bg-gray-900 dark:text-white">
       <h2 className="text-center w-full my-5 text-3xl text-[#A294F9] font-bold">Admin Profile</h2>
       <div className="flex flex-wrap justify-center">
         {admin && !isEditing && <AdminProfile admin={admin} onUpdate={handleUpdate} />}
         {isEditing && (
-          <form onSubmit={handleSubmit} className="w-full max-w-sm">
+          <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
             <div className="mb-4">
               <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2" htmlFor="name">Name</label>
               <input 
@@ -94,7 +94,7 @@ const AdminList = () => {
                 name="name" 
                 value={updatedAdmin.name} 
                 onChange={handleChange} 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-white dark:bg-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <div className="mb-4">
@@ -104,7 +104,7 @@ const AdminList = () => {
                 name="email" 
                 value={updatedAdmin.email} 
                 onChange={handleChange} 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-white dark:bg-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <div className="mb-4">
@@ -114,12 +114,12 @@ const AdminList = () => {
                 name="photoURL" 
                 value={updatedAdmin.photoURL} 
                 onChange={handleChange} 
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-white dark:bg-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
               />
             </div>
             <button 
               type="submit" 
-              className="bg-[#A594F9] glass hover:bg-[#C4D9FF] text-violet-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-[#A594F9] glass hover:bg-[#C4D9FF] text-violet-600 dark:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Save
             </button>

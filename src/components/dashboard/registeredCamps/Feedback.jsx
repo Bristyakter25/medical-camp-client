@@ -52,17 +52,19 @@ const Feedback = () => {
   };
 
   return (
-    <div className="container mt-28 mx-auto">
-      <h2 className="text-center text-3xl font-bold">Feedback</h2>
-      <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto">
+    <div className="container mt-28 mx-auto px-4">
+      <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-gray-100">Feedback</h2>
+      <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto mt-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md dark:shadow-slate-700">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="feedback">Your Feedback</label>
+          <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="feedback">
+            Your Feedback
+          </label>
           <textarea
             id="feedback"
             name="feedback"
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-800 dark:text-white bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             rows="5"
             placeholder="Enter your feedback here"
             required
