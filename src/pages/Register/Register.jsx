@@ -20,37 +20,28 @@ const Register = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
-  
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
-  
-        // Update Firebase user profile with name and photoURL
+
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
-            console.log("User profile updated successfully");
-  
-            // Include displayName and photoURL in the database request
             const userToSave = {
               name: data.name,
               email: loggedUser.email,
               photoURL: data.photoURL,
             };
-  
-            // Store the updated user in the database
+
             fetch("https://medical-camp-server-five.vercel.app/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("access-token")}`, 
-                
+                Authorization: `Bearer ${localStorage.getItem("access-token")}`,
               },
               body: JSON.stringify(userToSave),
             })
               .then((res) => res.json())
               .then((response) => {
-                console.log("User created in database:", response);
                 Swal.fire({
                   title: "Registration Successful!",
                   text: "Your account has been created.",
@@ -68,7 +59,6 @@ const Register = () => {
           });
       })
       .catch((error) => {
-        console.error("Error creating user:", error);
         Swal.fire({
           title: "Registration Failed",
           text: error.message,
@@ -78,88 +68,82 @@ const Register = () => {
   };
 
   return (
-    <div className=" bg-slate-300 pt-20 min-h-screen ">
+    <div className="bg-slate-100 mt-20 dark:bg-gray-900 pt-20 min-h-screen text-black dark:text-white">
       <h1 className="text-5xl text-center font-bold py-5">Register now!</h1>
       <div className="flex items-center justify-center gap-x-2 my-5">
-        <p className="text-center hover:text-blue-500">
+        <p className="hover:text-blue-500">
           <NavLink to="/">Home</NavLink>
         </p>
-        <p>
-          <FaArrowRight />
-        </p>
+        <p><FaArrowRight /></p>
         <p>Register</p>
       </div>
-      <div className="bg-white lg:max-w-6xl mx-auto p-5 rounded-lg">
-        <div className="hero-content  flex-col lg:flex-row-reverse">
-          <div className=" lg:text-left w-[400px]">
-            <Lottie animationData={loginAnimation}></Lottie>
+      <div className="bg-white dark:bg-gray-800 lg:max-w-6xl mx-auto p-5 rounded-lg shadow-md">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <div className="w-[400px]">
+            <Lottie animationData={loginAnimation} />
           </div>
 
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card bg-white dark:bg-gray-700 w-full max-w-sm shadow-2xl text-black dark:text-white">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text dark:text-white">Name</span>
                 </label>
                 <input
                   type="text"
                   placeholder="name"
                   {...register("name", { required: true })}
-                  className="input dark:text-black input-bordered"
-                  name="name"
+                  className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 />
-                {errors.name && <span>This field is required</span>}
+                {errors.name && <span className="text-red-400">This field is required</span>}
               </div>
+
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text dark:text-white">Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder="email"
                   {...register("email", { required: true })}
-                  className="input dark:text-black input-bordered"
-                  name="email"
-                  required
+                  className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 />
               </div>
+
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo</span>
+                  <span className="label-text dark:text-white">Photo</span>
                 </label>
                 <input
                   type="url"
                   placeholder="photoURL"
                   {...register("photoURL")}
-                  className="input dark:text-black input-bordered"
-                  name="photoURL"
+                  className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 />
               </div>
+
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text dark:text-white">Password</span>
                 </label>
                 <input
                   type="password"
                   placeholder="password"
                   {...register("password", { required: true })}
-                  className="input dark:text-black input-bordered"
-                  name="password"
-                  required
+                  className="input input-bordered bg-white dark:bg-gray-800 text-black dark:text-white"
                 />
               </div>
+
               <div className="form-control mt-6">
                 <button className="btn w-full bg-[#C5BAFF] glass text-violet-500">Register</button>
               </div>
             </form>
-            <div className="divider">OR</div>
-            <Social></Social>
-            <p className="text-center dark:text-black py-3 ">
+
+            <div className="divider dark:divider-white">OR</div>
+            <Social />
+            <p className="text-center py-3">
               Already have an account?
-              <Link to="/login" className="text-red-500">
-                {" "}
-                Login here!
-              </Link>
+              <Link to="/login" className="text-red-500"> Login here!</Link>
             </p>
           </div>
         </div>

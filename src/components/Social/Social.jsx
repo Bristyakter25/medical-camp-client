@@ -11,8 +11,8 @@ const Social = () => {
     });
   };
   return (
-    <div>
-      <div className="flex justify-center">
+    <div >
+      <div className="flex  justify-center">
         <button onClick={handleGoogleSignIn} className="btn">
           <FaGoogle></FaGoogle>
           Google
