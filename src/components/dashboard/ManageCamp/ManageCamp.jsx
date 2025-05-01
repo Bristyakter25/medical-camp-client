@@ -39,7 +39,7 @@ const ManageCamp = () => {
             confirmButtonText: "OK",
           });
 
-          // Remove the deleted camp from the list
+          
           setCamps(camps.filter((camp) => camp._id !== id));
         }
       } catch (error) {

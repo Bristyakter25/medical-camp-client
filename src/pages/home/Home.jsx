@@ -13,7 +13,7 @@ import UpcomingEvents from './UpcomingEvents';
 
 const Home = () => {
     return (
-      <div>
+     
         
 
         
@@ -29,7 +29,7 @@ const Home = () => {
         <WhyChooseUs></WhyChooseUs>
 
         </div>
-        </div>
+        
     );
 };
 
