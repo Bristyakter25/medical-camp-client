@@ -31,7 +31,7 @@ const AvailableCampCard = ({availableCamp}) => {
            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Participants:</span> {participantCount? <>{participantCount}</>: 0 }</p>
            <p className="mb-2"><span className="text-black dark:text-white font-semibold "> Fees:</span> {fees}</p>
            </div>
-           <Link to={`/addCamp/${_id}`}> <button className="btn w-full bg-[#C5BAFF] glass text-violet-500">Details</button></Link>
+           <Link to={`/addCamp/${_id}`}> <button className="btn w-full bg-[#C5BAFF] glass hover:bg-purple-500 hover:text-white dark:hover:bg-purple-500 dark:hover:text-white text-violet-500">Details</button></Link>
         </div>
     );
 };

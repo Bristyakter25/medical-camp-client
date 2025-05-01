@@ -61,21 +61,21 @@ const AvailableCamps = () => {
         Available Camps
       </h2>
 
-      <div className="lg:w-[1024px] mx-auto w-[320px] mb-5">
+      <div className="lg:w-[1024px] flex gap-x-10 mx-auto w-[320px] mb-5">
        
         <input
           type="text"
           placeholder="Search camps by name, location, or date"
           value={searchQuery}
           onChange={handleSearch}
-          className="w-full dark:text-black p-2 mb-4 border rounded-md"
+          className="w-full dark:text-white bg-white dark:bg-black text-black p-2 mb-4 border rounded-md"
         />
 
         
         <select
           value={sortOption}
           onChange={handleSort}
-          className="w-full dark:text-black p-2 mb-4 border rounded-md"
+          className="w-[450px] dark:text-white bg-white dark:bg-black text-black p-2 mb-4 border rounded-md"
         >
           <option value="">Sort By</option>
           <option value="mostRegistered">Most Registered</option>
