@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'upcomingEvents',
-          element:<UpcomingEvents></UpcomingEvents>
+          element:<UpcomingEvents isFullPage={true}></UpcomingEvents>
         },
         {
           path:'aboutUs',

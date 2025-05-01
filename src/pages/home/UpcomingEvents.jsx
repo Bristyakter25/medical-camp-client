@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UpcomingEvents = () => {
+const UpcomingEvents = ({ isFullPage = false }) => {
   const events = [
     {
       title: "Free Health Checkup Camp",
@@ -33,7 +33,7 @@ const UpcomingEvents = () => {
   ];
 
   return (
-    <div className="mb-10 mx-auto px-4 max-w-6xl">
+    <div className={`w-full max-w-7xl mx-auto px-4 mt-7 ${isFullPage ? "min-h-screen  items-center" : ""}`}>
       <h2 className="text-center pt-24 w-full mb-10 text-3xl text-[#A294F9] font-bold">Upcoming Events</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         {events.map((event, index) => (
