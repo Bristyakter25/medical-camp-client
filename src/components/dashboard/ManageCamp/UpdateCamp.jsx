@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 const UpdateCamp = () => {
     const updateCamp = useLoaderData();
     const { _id, name, date, location, healthcareName } = updateCamp;
+
     const {
         register,
         handleSubmit,
@@ -19,10 +20,9 @@ const UpdateCamp = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });
-    
+
             const result = await response.json();
-            console.log(result); 
-    
+
             if (result.message === 'Camp updated successfully!') {
                 Swal.fire({
                     title: "Success!",
@@ -41,7 +41,6 @@ const UpdateCamp = () => {
             }
         } catch (error) {
             console.error("Error updating camp:", error);
-    
             Swal.fire({
                 title: "Error!",
                 text: "Failed to update the camp!",
@@ -50,78 +49,57 @@ const UpdateCamp = () => {
             });
         }
     };
-    
 
     return (
-        <div>
-            <div className="hero w-full">
-                <div className="hero-content flex-col w-full">
-                    <div className="bg-base-100 w-full max-w-4xl shadow-2xl p-6">
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Camp Name</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Camp name"
-                                    {...register("name", { required: true })}
-                                    className="input dark:text-black input-bordered w-full"
-                                    name="name"
-                                    defaultValue={name}
-                                    required
-                                />
-                                {errors.name && <span>This field is required</span>}
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Date & Time</span>
-                                </label>
-                                <input
-                                    type="date"
-                                    placeholder="Date"
-                                    {...register("date", { required: true })}
-                                    className="input dark:text-black input-bordered w-full"
-                                    defaultValue={date}
-                                    required
-                                />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Location</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Location"
-                                    {...register("location", { required: true })}
-                                    className="input dark:text-black input-bordered w-full"
-                                    defaultValue={location}
-                                    required
-                                />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Healthcare Professional Name</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Healthcare Professional Name"
-                                    {...register("healthcareName", { required: true })}
-                                    className="input dark:text-black input-bordered w-full"
-                                    defaultValue={healthcareName}
-                                    required
-                                />
-                            </div>
-
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary w-full">Submit</button>
-                            </div>
-                        </form>
+        <div className="min-h-screen flex items-center justify-center p-4 bg-white dark:bg-gray-900 transition-colors">
+            <div className="w-full max-w-4xl bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100 shadow-xl rounded-lg p-8">
+                <h2 className="text-2xl font-bold mb-6 text-center text-violet-600 dark:text-violet-300">Update Camp</h2>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                    <div>
+                        <label className="block mb-2 font-medium">Camp Name</label>
+                        <input
+                            type="text"
+                            {...register("name", { required: true })}
+                            className="input input-bordered w-full bg-white dark:bg-gray-700 dark:text-white"
+                            defaultValue={name}
+                        />
+                        {errors.name && <span className="text-red-500 text-sm">This field is required</span>}
                     </div>
-                </div>
+
+                    <div>
+                        <label className="block mb-2 font-medium">Date & Time</label>
+                        <input
+                            type="date"
+                            {...register("date", { required: true })}
+                            className="input input-bordered w-full bg-white dark:bg-gray-700 dark:text-white"
+                            defaultValue={date}
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block mb-2 font-medium">Location</label>
+                        <input
+                            type="text"
+                            {...register("location", { required: true })}
+                            className="input input-bordered w-full bg-white dark:bg-gray-700 dark:text-white"
+                            defaultValue={location}
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block mb-2 font-medium">Healthcare Professional Name</label>
+                        <input
+                            type="text"
+                            {...register("healthcareName", { required: true })}
+                            className="input input-bordered w-full bg-white dark:bg-gray-700 dark:text-white"
+                            defaultValue={healthcareName}
+                        />
+                    </div>
+
+                    <div>
+                        <button className="btn btn-primary w-full hover:shadow-lg transition">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     );

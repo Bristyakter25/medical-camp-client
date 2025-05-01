@@ -29,7 +29,7 @@ const ManageCamp = () => {
         const response = await fetch(`https://medical-camp-server-five.vercel.app/addCamp/${id}`, {
           method: "DELETE",
         });
-        
+
         const result = await response.json();
         if (result.deletedCount > 0) {
           Swal.fire({
@@ -39,7 +39,6 @@ const ManageCamp = () => {
             confirmButtonText: "OK",
           });
 
-          
           setCamps(camps.filter((camp) => camp._id !== id));
         }
       } catch (error) {
@@ -55,39 +54,40 @@ const ManageCamp = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-center  mt-16 text-3xl text-[#A294F9] font-bold mb-10">
+    <div className="px-4">
+      <h2 className="text-center mt-16 text-3xl text-[#A294F9] font-bold mb-10">
         Manage Camps
       </h2>
       <div className="overflow-x-auto w-[320px] lg:w-full">
-        <table className="table table-auto w-full border-collapse border border-gray-300">
-          {/* Table Header */}
-          <thead className="bg-gray-100">
+        <table className="table-auto w-full border-collapse border border-gray-300 dark:border-gray-700">
+          <thead className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white">
             <tr>
-              <th className="border border-gray-300 px-4 py-2">Name</th>
-              <th className="border border-gray-300 px-4 py-2">Date & Time</th>
-              <th className="border border-gray-300 px-4 py-2">Location</th>
-              <th className="border border-gray-300 px-4 py-2">Healthcare Professional</th>
-              <th className="border border-gray-300 px-4 py-2">Actions</th>
+              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3">Name</th>
+              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3">Date & Time</th>
+              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3">Location</th>
+              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3">Healthcare Professional</th>
+              <th className="border border-gray-300 dark:border-gray-700 px-4 py-3">Actions</th>
             </tr>
           </thead>
 
-          {/* Table Body */}
-          <tbody>
+          <tbody className="bg-white dark:bg-gray-900 text-black dark:text-white">
             {camps.map((camp) => (
               <tr key={camp._id}>
-                <td className="border border-gray-300 px-2 py-2">{camp.name}</td>
-                <td className="border border-gray-300 px-2 py-2">{camp.date}</td>
-                <td className="border border-gray-300 px-2 py-2">{camp.location}</td>
-                <td className="border border-gray-300 px-2 py-2">{camp.healthcareName}</td>
-                <td className="border border-gray-300 px-4 py-2">
+                <td className="border border-gray-300 dark:border-gray-700 px-2 py-3">{camp.name}</td>
+                <td className="border border-gray-300 dark:border-gray-700 px-2 py-3">{camp.date}</td>
+                <td className="border border-gray-300 dark:border-gray-700 px-2 py-3">{camp.location}</td>
+                <td className="border border-gray-300 dark:border-gray-700 px-2 py-3">{camp.healthcareName}</td>
+                <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 flex gap-2">
                   <Link to={`/dashboard/updateCamp/${camp._id}`}>
-                    <button className="btn bg-[#A594F9] glass hover:bg-[#C4D9FF] text-violet-600 font-bold px-4 py-1 rounded mr-2">
+                    <button className="btn bg-[#A594F9] hover:bg-[#C4D9FF] text-violet-600 dark:text-white font-bold px-4 py-1 rounded">
                       Update
                     </button>
                   </Link>
-                  <button onClick={() => handleDelete(camp._id)} className="btn bg-red-500 text-white px-4 py-1 rounded">
-                  <IoTrashBinSharp />
+                  <button
+                    onClick={() => handleDelete(camp._id)}
+                    className="btn bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded"
+                  >
+                    <IoTrashBinSharp />
                   </button>
                 </td>
               </tr>
