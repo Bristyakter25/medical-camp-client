@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
 import { InfinitySpin } from "react-loader-spinner";
-
+import Swal from "sweetalert2";
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,7 +31,11 @@ const Users = () => {
       });
 
       if (response.status === 200) {
-        alert("User role updated successfully!");
+        Swal.fire({
+          title: "Good job!",
+          text: "You Successfully Change the Status!",
+          icon: "success"
+        });
         fetchUsers(); // Refresh list after update
       } else {
         alert("Failed to update role.");

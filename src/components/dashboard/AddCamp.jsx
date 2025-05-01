@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-
+import Swal from "sweetalert2";
 
 const AddCamp = () => {
     const {
@@ -19,7 +19,11 @@ const AddCamp = () => {
     
           const result = await response.json();
           if (result.insertedId) {
-            alert("Camp added successfully!");
+            Swal.fire({
+              title: "Good job!",
+              text: "You Added the Camp!",
+              icon: "success"
+            });
             reset(); // Clear the form
           }
         } catch (error) {
