@@ -13,9 +13,9 @@ const PopularCamps = () => {
 
     },[])
     return (
-        <div>
+        <div className="w-[350px] lg:w-[1124px] mx-auto">
             <h2 className="text-center w-full mt-16 text-3xl text-[#A294F9] font-bold mb-10 ">Our Popular Medical Camps</h2>
-            <div className="my-5 ml-12 lg:ml-0 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
+            <div className="my-5   mr-3 lg:mr-0 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
                 {
                     popularCamps.map(popularCamp => <PopularCampCard key={popularCamp._id} popularCamp={popularCamp}></PopularCampCard>)
                 }

@@ -20,23 +20,23 @@ const Banner = () => {
   showStatus={false}       // Hide status indicator (1/6, etc.)
   showArrows={true}        // Show left/right arrows
 >
-  <div className="h-[630px]">
-    <img src={pic1} className="w-full h-full object-cover" alt="Medical Camp 1" />
+  <div className="lg:h-[630px] h-[300px] w-full">
+    <img src={pic1} className="w-full h-full " alt="Medical Camp 1" />
   </div>
-  <div className="h-[630px]">
-    <img src={pic2} className="w-full h-full object-cover" alt="Medical Camp 2" />
+  <div className="lg:h-[630px] h-[300px]">
+    <img src={pic2} className="w-full h-full r" alt="Medical Camp 2" />
   </div>
-  <div className="h-[630px]">
-    <img src={pic3} className="w-full h-full object-cover" alt="Medical Camp 3" />
+  <div className="lg:h-[630px] h-[300px]">
+    <img src={pic3} className="w-full h-full " alt="Medical Camp 3" />
   </div>
-  <div className="h-[630px]">
-    <img src={pic4} className="w-full h-full object-cover" alt="Medical Camp 4" />
+  <div className="lg:h-[630px] h-[300px]">
+    <img src={pic4} className="w-full h-full " alt="Medical Camp 4" />
   </div>
-  <div className="h-[630px]">
-    <img src={pic5} className="w-full h-full object-cover" alt="Medical Camp 5" />
+  <div className="lg:h-[630px] h-[300px]">
+    <img src={pic5} className="w-full h-full " alt="Medical Camp 5" />
   </div>
-  <div className="h-[630px]">
-    <img src={pic6} className="w-full h-full object-cover" alt="Medical Camp 6" />
+  <div className="lg:h-[630px] h-[300px]">
+    <img src={pic6} className="w-full h-full" alt="Medical Camp 6" />
   </div>
 </Carousel>
 

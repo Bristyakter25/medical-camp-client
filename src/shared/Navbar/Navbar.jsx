@@ -34,7 +34,7 @@ const Navbar = () => {
     <div className='bg-[#F5EFFF] w-full dark:bg-[#00072D] fixed top-0 z-10'>
       <div className="navbar max-w-[1000px] mx-auto px-4">
         {/* Left Side (Logo) */}
-        <div className="navbar-start flex items-center">
+        <div className="navbar-start  flex items-center">
           <div className="dropdown lg:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost">
               <svg
@@ -47,7 +47,7 @@ const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1]  mt-3 w-52 p-2 shadow">
+            <ul tabIndex={0} className="menu menu-sm  dropdown-content bg-white dark:bg-black rounded-box z-[1]  mt-3 w-52 p-2 shadow">
               <NavLinks />
             </ul>
           </div>
