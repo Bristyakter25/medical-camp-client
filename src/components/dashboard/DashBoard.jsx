@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
+import { useContext, useEffect, useState } from "react";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
+import { FaBars, FaTimes, FaSun, FaMoon, FaPowerOff } from "react-icons/fa";
 import {
   FaClinicMedical,
   FaHospitalUser,
@@ -14,10 +14,12 @@ import { MdManageAccounts, MdQueryStats } from "react-icons/md";
 import { TbBrandGoogleAnalytics, TbCashRegister } from "react-icons/tb";
 import { GrHome } from "react-icons/gr";
 import UseAdmin from "../../hooks/UseAdmin";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const DashBoard = () => {
   const [isAdmin] = UseAdmin();
   const [isOpen, setIsOpen] = useState(false);
+   
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
@@ -34,6 +36,7 @@ const DashBoard = () => {
     }
   }, [darkMode]);
 
+  
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
@@ -89,8 +92,15 @@ const DashBoard = () => {
             <li><NavLink to='/dashboard/payments'><FaMoneyCheckAlt /> Payment History</NavLink></li>
           </ul>
         )}
+
+
+
+          
+        
+
       </div>
 
+      
       {/* Main Content */}
       <div className="flex-1 ml-5 lg:ml-0 p-4">
         <Outlet />
